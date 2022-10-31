@@ -16,7 +16,8 @@
   <h3 th:text="${carInfo.mileage}"></h3>
   <h3 th:text="${carInfo.limit}"></h3>
 
-  <img src="/images/car.png">
+  <img th:src="@{/images/car.png}">
+<!--  <img src="/images/car.png">-->
 </div>
 </body>
 </html>

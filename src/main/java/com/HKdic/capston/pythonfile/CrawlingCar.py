@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 
 options = webdriver.ChromeOptions()
-options.add_argument('--headless') # BackGround 작업
+# options.add_argument('--headless') # BackGround 작업
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options) # driver 자동 Download
 # options.add_argument('--window-size=1800,800') # Window Size
 #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))

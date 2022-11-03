@@ -7,10 +7,15 @@ http://www.templatemo.com/tm-486-new-event
 */
 
 body {
-		background: #ffffff;
-    font-family: 'Poppins', sans-serif;
+	/*	background: #ffffff;*/
+    /*font-family: 'Poppins', sans-serif;*/
+    /*font-style: normal;*/
+	/*	font-weight: 400;*/
+
+
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-style: normal;
-		font-weight: 400;
+    font-weight: 400;
 }
 
 
@@ -288,7 +293,7 @@ footer {
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
-    color: #ffffff;
+    color: #FFFFFF;
     display: -webkit-box;
     display: -webkit-flex;
      display: -ms-flexbox;
@@ -302,10 +307,15 @@ footer {
 }
 
 #intro h3 {
-  letter-spacing: 2px;
+    letter-spacing: 2px;
+    font-size: 30px;
+    color:rgba(255, 255, 255, 0.7);
 }
 
-
+#intro h1 {
+    font-size: 70px;
+    text-shadow: 2px 1px 1px black;
+}
 
 /*---------------------------------------
    Overview  section              

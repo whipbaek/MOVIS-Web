@@ -86,8 +86,16 @@ http://www.templatemo.com/tm-486-new-event
 				<h3 class="wow bounceIn" data-wow-delay="0.9s">"We can Find Every Car What you Lookin at RIGHT NOW"</h3>
 <!--				<a href="#overview" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs" data-wow-delay="2.3s">LEARN MORE</a>-->
 <!--				<a href="#register" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2.3s">REGISTER NOW</a>-->
-				<a class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="2.3s" style="font-size: 25px"> Upload or Drag your Image &#128659; </a>
-
+				<form th:action method="post" enctype="multipart/form-data">
+					<input id="uploadInput" type="file" name="file" onchange="this.form.submit()" style="display: none">
+					<a id="uploadBtn" onclick="onClickUpload();" class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="2.3s" style="font-size: 25px"> Upload or Drag your Image &#128659; </a>
+				</form>
+				<script>
+					function onClickUpload(){
+						let myInput = document.getElementById("uploadInput");
+						myInput.click();
+					}
+				</script>
 			</div>
 		</div>
 	</div>

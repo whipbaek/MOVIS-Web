@@ -17,7 +17,7 @@ import java.io.File;
 
 @Slf4j
 @Controller
-@RequestMapping("/spring")
+@RequestMapping("/movis")
 public class SpringUploadController implements WebMvcConfigurer {
     @Value("${file.dir}")
     private String fileDir;
@@ -26,12 +26,13 @@ public class SpringUploadController implements WebMvcConfigurer {
     private String fileDir2;
 
 
-    @GetMapping("/upload")
-    public String newFile() {
-        return "upload-form";
+
+    @GetMapping
+    public String movisMain() {
+        return "movisMain";
     }
 
-    @PostMapping("/upload")
+    @PostMapping
     public String saveFile(@RequestParam MultipartFile file, Model model) throws Exception {
 
         // Save File
@@ -51,7 +52,7 @@ public class SpringUploadController implements WebMvcConfigurer {
         model.addAttribute("carInfo", carInformation);
         model.addAttribute("filepath", "C:/Users/jibae/Projects/capston/images/car.png");
 
-        return "testform";
+        return "before/testform";
     }
 
     @GetMapping("/test")
@@ -67,8 +68,8 @@ public class SpringUploadController implements WebMvcConfigurer {
             file.transferTo(new File(fullPath));
         }
         new PythonImplement().implementMLDesktop();
-        CarInformation carInformation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
-        model.addAttribute("carInfo", carInformation);
+        CarInformation carInformpation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
+        model.addAttribute("carInfo", carInformpation);
 
         return "testform";
 

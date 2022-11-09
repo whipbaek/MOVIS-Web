@@ -17,6 +17,26 @@ body {
     font-style: normal;
     font-weight: 400;
 }
+.square {
+    position: relative;
+    width: 50%;
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.rectangle {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: grey;
+    opacity: 0.7;
+    border-radius: 10%;
+}
 
 
 /*---------------------------------------
@@ -96,6 +116,26 @@ footer {
 #contact h3 {
     padding-bottom: 12px;
 }
+
+#intro .container{
+    width:80%;
+    margin: 0 auto;
+}
+
+#intro .box {
+    background-color: grey;
+    opacity: 0.7;
+    border-radius: 10%;
+}
+
+.box_2 {
+    padding-top: 75%;
+}
+
+#intro .box_3 {
+    padding-top: 56.25%;
+}
+
 
 #intro .btn,
 #contact .btn {
@@ -289,7 +329,7 @@ footer {
     Intro section              
 -----------------------------------------*/
 #intro {
-    background: url('../images/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
+    background: url('../tempimage/images/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;

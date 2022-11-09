@@ -32,6 +32,9 @@ public class SpringUploadController implements WebMvcConfigurer {
         return "movisMain";
     }
 
+    @GetMapping(value = "/result")
+    public String movisResult() { return "movisResult";}
+
     @PostMapping
     public String saveFile(@RequestParam MultipartFile file, Model model) throws Exception {
 
@@ -42,17 +45,15 @@ public class SpringUploadController implements WebMvcConfigurer {
             file.transferTo(new File(fullPath));
         }
 
-        // Logic implement (ML & Crawling)
-        PythonImplement pythonImplement = new PythonImplement();
-        pythonImplement.implementML();
-        CarInformation carInformation = pythonImplement.implementCrawling();
+        new PythonImplement().implementML();
+       // CarInformation carInformation = pythonImplement.implementCrawling();
 
-        carInformation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
+        CarInformation carInformation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
 
         model.addAttribute("carInfo", carInformation);
         model.addAttribute("filepath", "C:/Users/jibae/Projects/capston/images/car.png");
 
-        return "before/testform";
+        return "movisResult";
     }
 
     @GetMapping("/test")
@@ -71,7 +72,7 @@ public class SpringUploadController implements WebMvcConfigurer {
         CarInformation carInformpation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
         model.addAttribute("carInfo", carInformpation);
 
-        return "testform";
+        return "movisResult";
 
     }
 }

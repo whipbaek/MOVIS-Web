@@ -117,10 +117,41 @@ footer {
     padding-bottom: 12px;
 }
 
+.dropBox {
+    width: 40vw;
+    height: 20vh;
+
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,10%);
+
+    margin: .5rem;
+    overflow: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    border: 4px dashed #ddd;
+    user-select: none;
+    transition: 0.4s;
+}
+
+.dropBox.active {
+    background: #eee;
+}
+
+
+
 #intro .container{
     width:80%;
     margin: 0 auto;
+    height: 50%;
 }
+
+
 
 #intro .box {
     background-color: grey;

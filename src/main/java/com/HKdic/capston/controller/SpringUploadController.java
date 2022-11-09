@@ -58,7 +58,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     @GetMapping("/test")
     public String temp(){
-        return "upload-form";
+        return "movisMain";
     }
 
     @PostMapping("/test")

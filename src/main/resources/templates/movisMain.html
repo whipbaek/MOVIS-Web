@@ -88,11 +88,11 @@
 				<form id="uploadForm" th:action method="post" enctype="multipart/form-data">
 					<input id="uploadInput" type="file" name="file" onchange="this.form.submit()" style="display: none">
 					<a id="uploadBtn" onclick="onClickUpload();" class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="2.3s" style="font-size: 25px"> ADD Image &#128659; </a>
-					<div class="dropBox">
-						<h3>Drop File here</h3>
-						<input id = "btn-upload" type="file" onchange="this.form.submit()" style="display: none">
-					</div>
 				</form>
+
+				<div class="dropBox" th:name="file">
+					<h3>Drop File here</h3>
+				</div>
 
 
 				<script>
@@ -102,48 +102,41 @@
 					}
 				</script>
 				<script>
-					const btnUpload = document.querySelector('.btn-upload');
 					const dropBox = document.querySelector('.dropBox');
 					const title = document.querySelector(".dropBox h3");
 
-					/* 박스 안에 Drag 들어왔을 때 */
 					dropBox.addEventListener('dragenter', function(e) {
 						console.log('dragenter');
-					});
-
-					/* 박스 안에 Drag를 하고 있을 때 */
+					}); /* 박스 안에 Drag 들어왔을 때 */
 					dropBox.addEventListener('dragover', function(e) {
 						e.preventDefault();
 						console.log('dragover');
 
 						dropBox.style.backgroundColor = 'green';
-					});
-
-					/* 박스 밖으로 Drag가 나갈 때 */
+					}); /* 박스 안에 Drag를 하고 있을 때 */
 					dropBox.addEventListener('dragleave', function(e) {
 						console.log('dragleave');
 
 						dropBox.style.backgroundColor = '';
-					});
+					}); /* 박스 밖으로 Drag가 나갈 때 */
 
 					/* 박스 안에서 Drag를 Drop했을 때 */
 
 					dropBox.addEventListener('drop', function(e) {
 						e.preventDefault();
 						dropBox.style.backgroundColor = '';
-
 						const data = e.dataTransfer.files[0];
-						let formData = new FormData();
-						formData.append('file', document.getElementById('btn-upload').files[0]);
+						const formData = new FormData();
+						formData.append('file', data);
+
 						fetch('http://localhost:8080/movis/test',{
 							method: 'POST',
+							headers:{},
 							body : formData
 						});
-
-						// document.getElementById('btn-upload').value = data;
-						// document.getElementById('uploadForm').submit();
-
+						// window.location.href = 'http://localhost:8080/movis/results';
 					});
+
 
 				</script>
 			</div>

@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.File;
 
@@ -63,7 +63,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     @GetMapping("/results")
     public String redirectionPage(){
-        return "temp";
+        return "movisResult";
     }
 
     @PostMapping("/test")
@@ -79,6 +79,6 @@ public class SpringUploadController implements WebMvcConfigurer {
         log.info("완료");
         resultValue = "temp";
 
-        return "temp";
+        return "redirect:/movis/results";
     }
 }

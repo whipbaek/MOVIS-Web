@@ -90,8 +90,8 @@ a {
 
 #overview,
 #register {
-  padding-top: 14rem;
-  padding-bottom: 14rem;
+  padding-top: 8rem;
+  padding-bottom:6rem;
 }
 
 #detail, #video,
@@ -99,8 +99,8 @@ a {
 #program,
 #sponsors, 
 #contact, footer {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
 #detail,
@@ -115,6 +115,10 @@ footer {
 #venue h3,
 #contact h3 {
     padding-bottom: 12px;
+}
+
+#detail h3{
+    padding-bottom: 0px;
 }
 
 .dropBox {

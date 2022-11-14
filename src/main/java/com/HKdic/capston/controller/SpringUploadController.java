@@ -26,14 +26,11 @@ public class SpringUploadController implements WebMvcConfigurer {
     private String fileDir2;
 
 
-
     @GetMapping
     public String movisMain() {
         return "movisMain";
     }
 
-    @GetMapping(value = "/result")
-    public String movisResult() { return "movisResult";}
 
     @PostMapping
     public String saveFile(@RequestParam MultipartFile file, Model model) throws Exception {
@@ -61,7 +58,7 @@ public class SpringUploadController implements WebMvcConfigurer {
         return "movisMain";
     }
 
-    @GetMapping("/results")
+    @GetMapping("/result")
     public String redirectionPage(){
         return "movisResult";
     }

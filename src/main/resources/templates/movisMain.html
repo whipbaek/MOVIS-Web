@@ -83,15 +83,62 @@
 			<div class="col-md-12 col-sm-12">
 				<h1 class="wow fadeIn" data-wow-delay="1.0s">M O V I S</h1>
 				<h3 class="wow bounceIn" data-wow-delay="0.9s">"We can Find Every Car What you Lookin at RIGHT NOW"</h3>
-				<form th:action method="post" enctype="multipart/form-data">
+
+
+				<form id="uploadForm" th:action method="post" enctype="multipart/form-data">
 					<input id="uploadInput" type="file" name="file" onchange="this.form.submit()" style="display: none">
-					<a id="uploadBtn" onclick="onClickUpload();" class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="2.3s" style="font-size: 25px"> Upload or Drag your Image &#128659; </a>
+					<a id="uploadBtn" onclick="onClickUpload();" class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="2.3s" style="font-size: 25px"> ADD Image &#128659; </a>
 				</form>
+
+				<div class="dropBox" th:name="file">
+					<h3>Drop File here</h3>
+				</div>
+
+
 				<script>
 					function onClickUpload(){
 						let myInput = document.getElementById("uploadInput");
 						myInput.click();
 					}
+				</script>
+				<script>
+					const dropBox = document.querySelector('.dropBox');
+					const title = document.querySelector(".dropBox h3");
+
+					dropBox.addEventListener('dragenter', function(e) {
+						console.log('dragenter');
+					}); /* 박스 안에 Drag 들어왔을 때 */
+					dropBox.addEventListener('dragover', function(e) {
+						e.preventDefault();
+						console.log('dragover');
+
+						dropBox.style.backgroundColor = 'green';
+					}); /* 박스 안에 Drag를 하고 있을 때 */
+					dropBox.addEventListener('dragleave', function(e) {
+						console.log('dragleave');
+
+						dropBox.style.backgroundColor = '';
+					}); /* 박스 밖으로 Drag가 나갈 때 */
+
+					/* 박스 안에서 Drag를 Drop했을 때 */
+
+					dropBox.addEventListener('drop', function(e) {
+						e.preventDefault();
+						dropBox.style.backgroundColor = '';
+						const data = e.dataTransfer.files[0];
+						const formData = new FormData();
+						formData.append('file', data);
+
+						fetch('http://localhost:8080/movis/test',{
+							method: 'POST',
+							headers:{},
+							body : formData
+						});
+
+						window.location.href = 'http://localhost:8080/movis/result';
+					});
+
+
 				</script>
 			</div>
 		</div>

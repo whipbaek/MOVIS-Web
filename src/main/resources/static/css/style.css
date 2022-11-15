@@ -90,8 +90,8 @@ a {
 
 #overview,
 #register {
-  padding-top: 14rem;
-  padding-bottom: 14rem;
+  padding-top: 8rem;
+  padding-bottom:6rem;
 }
 
 #detail, #video,
@@ -99,8 +99,8 @@ a {
 #program,
 #sponsors, 
 #contact, footer {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
 
 #detail,
@@ -117,10 +117,45 @@ footer {
     padding-bottom: 12px;
 }
 
+#detail h3{
+    padding-bottom: 0px;
+}
+
+.dropBox {
+    width: 40vw;
+    height: 20vh;
+
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,10%);
+
+    margin: .5rem;
+    overflow: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    border: 4px dashed #ddd;
+    user-select: none;
+    transition: 0.4s;
+}
+
+.dropBox.active {
+    background: #eee;
+}
+
+
+
 #intro .container{
     width:80%;
     margin: 0 auto;
+    height: 50%;
 }
+
+
 
 #intro .box {
     background-color: grey;

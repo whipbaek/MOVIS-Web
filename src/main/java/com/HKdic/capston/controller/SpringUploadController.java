@@ -5,13 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.File;
 
@@ -19,6 +16,9 @@ import java.io.File;
 @Controller
 @RequestMapping("/movis")
 public class SpringUploadController implements WebMvcConfigurer {
+
+    private String resultValue;
+
     @Value("${file.dir}")
     private String fileDir;
 
@@ -26,14 +26,11 @@ public class SpringUploadController implements WebMvcConfigurer {
     private String fileDir2;
 
 
-
     @GetMapping
     public String movisMain() {
         return "movisMain";
     }
 
-    @GetMapping(value = "/result")
-    public String movisResult() { return "movisResult";}
 
     @PostMapping
     public String saveFile(@RequestParam MultipartFile file, Model model) throws Exception {
@@ -58,7 +55,12 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     @GetMapping("/test")
     public String temp(){
-        return "upload-form";
+        return "movisMain";
+    }
+
+    @GetMapping("/result")
+    public String redirectionPage(){
+        return "movisResult";
     }
 
     @PostMapping("/test")
@@ -71,8 +73,9 @@ public class SpringUploadController implements WebMvcConfigurer {
         new PythonImplement().implementMLDesktop();
         CarInformation carInformpation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
         model.addAttribute("carInfo", carInformpation);
+        log.info("완료");
+        resultValue = "temp";
 
-        return "movisResult";
-
+        return "redirect:/movis/results";
     }
 }

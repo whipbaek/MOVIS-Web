@@ -1,14 +1,13 @@
 package com.HKdic.capston.controller;
+import static com.HKdic.capston.domain.DIR.*;
 import com.HKdic.capston.domain.CarInformation;
 import com.HKdic.capston.domain.PythonImplement;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.File;
 
@@ -18,13 +17,6 @@ import java.io.File;
 public class SpringUploadController implements WebMvcConfigurer {
 
     private String resultValue;
-
-    @Value("${file.dir}")
-    private String fileDir;
-
-    @Value("${file.dir2}")
-    private String fileDir2;
-
 
     @GetMapping
     public String movisMain() {
@@ -37,7 +29,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
         // Save File
         if (!file.isEmpty()) {
-            String fullPath = fileDir + "testFile.jpg";
+            String fullPath = FILE_SAVE_DIR.getVal() + "testFile.jpg";
             log.info("파일 저장 fullPath={}", fullPath);
             file.transferTo(new File(fullPath));
         }
@@ -48,14 +40,9 @@ public class SpringUploadController implements WebMvcConfigurer {
         CarInformation carInformation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
 
         model.addAttribute("carInfo", carInformation);
-        model.addAttribute("filepath", "C:/Users/jibae/Projects/capston/images/car.png");
+        model.addAttribute("filepath", CAR_IMAGE_DIR.getVal());
 
-        return "movisResult";
-    }
-
-    @GetMapping("/test")
-    public String temp(){
-        return "movisMain";
+        return "redirect:/movis/result";
     }
 
     @GetMapping("/result")
@@ -63,19 +50,4 @@ public class SpringUploadController implements WebMvcConfigurer {
         return "movisResult";
     }
 
-    @PostMapping("/test")
-    public String testsave(@RequestParam MultipartFile file, Model model) throws Exception{
-        if (!file.isEmpty()) {
-            String fullPath = fileDir2 + "testFile.jpg";
-            log.info("파일 저장 fullPath={}", fullPath);
-            file.transferTo(new File(fullPath));
-        }
-        new PythonImplement().implementMLDesktop();
-        CarInformation carInformpation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
-        model.addAttribute("carInfo", carInformpation);
-        log.info("완료");
-        resultValue = "temp";
-
-        return "redirect:/movis/results";
-    }
 }

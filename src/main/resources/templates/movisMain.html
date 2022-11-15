@@ -129,15 +129,15 @@
 						const formData = new FormData();
 						formData.append('file', data);
 
-						fetch('http://localhost:8080/movis/test',{
+						fetch('http://localhost:8080/movis',{
 							method: 'POST',
 							headers:{},
 							body : formData
 						});
 
+						// redirect 경로 지정
 						window.location.href = 'http://localhost:8080/movis/result';
 					});
-
 
 				</script>
 			</div>

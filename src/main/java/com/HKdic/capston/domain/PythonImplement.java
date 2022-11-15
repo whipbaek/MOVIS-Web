@@ -4,22 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static com.HKdic.capston.domain.DIR.*;
+
 /* Class For Implement Python File */
 
 public class PythonImplement {
 
-    public static String pythonCommand = "C:\\Users\\jibae\\AppData\\Local\\Programs\\Python\\Python39\\python.exe";
-    public static String argMLPython = "C:\\Users\\jibae\\Projects\\capston\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py";
-    public static String argCrawlingPython = "C:\\Users\\jibae\\Projects\\capston\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar.py";
-    public static String carImageDir = "C:\\Users\\jibae\\Projects\\capston\\src\\main\\resources\\static\\images\\testFile.jpg";
-
-    public static String pythonCommandDesktop = "C:\\Users\\whipbaek\\AppData\\Local\\Programs\\Python\\Python39\\python.exe";
-    public static String argMLPythonDesktop = "C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py";
-    public static String argCrawlingPythonDesktop = "C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar.py";
-    public static String carImageDirDesktop = "C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\images\\testFile.jpg";
     public static String nameOfCar = "";
 
     public Process makeProcess(String command, String pythonFile, String arg1) throws IOException {
+        return (new ProcessBuilder(command, pythonFile, arg1)).start();
+    }
+
+    public Process makeProcess(String command, String pythonFile, String arg1, String arg2) throws IOException {
         return (new ProcessBuilder(command, pythonFile, arg1)).start();
     }
 
@@ -31,31 +28,19 @@ public class PythonImplement {
      */
 
     public void implementML() throws Exception{
-        Process process = makeProcess(pythonCommand, argMLPython, carImageDir);
-
-        int exitVal = process.waitFor();
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
-
-        String result;
-        result = br.readLine(); //get car's name
-        if(exitVal != 0) return; // 비정상 종료
-
-        nameOfCar = result;
+        Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_ML_DIR.getVal(), UPLOADED_IMG_DIR.getVal());
+        nameOfCar = getCarName(process);
     }
 
-    public void implementMLDesktop() throws Exception{
-        Process process = makeProcess(pythonCommandDesktop, argMLPythonDesktop, carImageDirDesktop);
-
+    public String getCarName(Process process) throws Exception {
         int exitVal = process.waitFor();
-
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
 
         String result;
         result = br.readLine(); //get car's name
-        if(exitVal != 0) return; // 비정상 종료
+        if(exitVal != 0) return null;
 
-        nameOfCar = result;
+        return result;
     }
 
     /**
@@ -68,9 +53,13 @@ public class PythonImplement {
     public CarInformation implementCrawling() throws Exception{
         if(nameOfCar == " ") return null;
 
-        Process process = makeProcess(pythonCommand, argCrawlingPython, nameOfCar);
-        int exitVal = process.waitFor();
+        Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), nameOfCar, PYTHON_IMAGE_DIR.getVal());
+        return getCarInformation(process);
 
+    }
+
+    public CarInformation getCarInformation(Process process) throws Exception{
+        int exitVal = process.waitFor();
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
 
         String result;

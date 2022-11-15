@@ -1,5 +1,10 @@
 import cv2
 import sys
+
+'''
+* Parameter (This File Directory, Image File Directory Uploaded ) 
+'''
+
 img = cv2.imread(sys.argv[1])
 cv2.imshow('img', img)
 cv2.waitKey()

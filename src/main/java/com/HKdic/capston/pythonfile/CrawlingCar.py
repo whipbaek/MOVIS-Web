@@ -6,7 +6,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-
+'''
+* Parameter (This File Directory, Name of Car, 사진이 저장될 파일의 위치) 
+'''
 
 options = webdriver.ChromeOptions()
 # options.add_argument('--headless') # BackGround 작업
@@ -30,7 +32,7 @@ time.sleep(4)
 
 element = driver.find_element(By.CLASS_NAME, 'box_model')
 element_png = element.screenshot_as_png
-with open("C:\\Users\\jibae\\Projects\\capston\\images\\car.png", "wb") as file:
+with open(sys[2], "wb") as file:
     file.write(element_png)
 
 print('end!')

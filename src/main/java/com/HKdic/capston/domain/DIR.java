@@ -27,11 +27,11 @@ public enum DIR {
 //    FILE_DIR("/C:/Users/jibae/Projects/capston/src/main/resources/static/images/"),
 //    PYTHON_DIR("C:\\Users\\jibae\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
 //    PYTHON_ML_DIR("C:\\Users\\jibae\\Projects\\capston\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
-//    PYTHON_CRAWLING_DIR("C:\\Users\\jibae\\Projects\\capston\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar.py"),
+//    PYTHON_CRAWLING_DIR("C:\\Users\\jibae\\Projects\\capston\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
 //    UPLOADED_IMG_DIR("C:\\Users\\jibae\\Projects\\capston\\src\\main\\resources\\static\\images\\testFile.jpg"),
 //    FILE_SAVE_DIR("/C:/Users/jibae/Projects/capston/src/main/resources/static/images/"),
 //    CAR_IMAGE_DIR("C:/Users/jibae/Projects/capston/images/car.png"),
-//    PYTHON_IMAGE_DIR("C:\\Users\\jibae\\Projects\\capston\\images\\car.png");
+//    PYTHON_IMAGE_DIR("C:\\Users\\jibae\\Projects\\capston\\images\\");
 
     // Desktop Side
     RESOURCE_HANDLER("/images/**"),
@@ -39,15 +39,15 @@ public enum DIR {
     FILE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/src/main/resources/static/images/"),
     PYTHON_DIR("C:\\Users\\whipbaek\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
     PYTHON_ML_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
-    PYTHON_CRAWLING_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar.py"),
+    PYTHON_CRAWLING_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
     UPLOADED_IMG_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\images\\testFile.jpg"),
     FILE_SAVE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/src/main/resources/static/images/"),
     CAR_IMAGE_DIR("C:/Users/whipbaek/Projects/MOVIS-Web/images/car.png"),
-    PYTHON_IMAGE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\car.png");
+    PYTHON_IMAGE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\");
 
 
 
-    private String val;
+    private final String val;
 
     DIR(String val) {
         this.val = val;

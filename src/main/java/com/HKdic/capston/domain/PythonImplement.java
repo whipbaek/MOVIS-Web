@@ -3,6 +3,9 @@ package com.HKdic.capston.domain;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static com.HKdic.capston.domain.DIR.*;
 
@@ -17,7 +20,7 @@ public class PythonImplement {
     }
 
     public Process makeProcess(String command, String pythonFile, String arg1, String arg2) throws IOException {
-        return (new ProcessBuilder(command, pythonFile, arg1)).start();
+        return (new ProcessBuilder(command, pythonFile, arg1, arg2)).start();
     }
 
     /**
@@ -37,7 +40,8 @@ public class PythonImplement {
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
 
         String result;
-        result = br.readLine(); //get car's name
+        result = br.readLine(); //get car's name from PythonFile
+        System.out.println("result = " + result);
         if(exitVal != 0) return null;
 
         return result;
@@ -51,8 +55,9 @@ public class PythonImplement {
      */
 
     public CarInformation implementCrawling() throws Exception{
-        if(nameOfCar == " ") return null;
-
+        if(nameOfCar == " ") {
+            return null;
+        }
         Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), nameOfCar, PYTHON_IMAGE_DIR.getVal());
         return getCarInformation(process);
 
@@ -61,16 +66,13 @@ public class PythonImplement {
     public CarInformation getCarInformation(Process process) throws Exception{
         int exitVal = process.waitFor();
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
-
-        String result;
-
-        while((result = br.readLine()) != null){
-            System.out.println("result = " + result);
-        }
+        String result = br.readLine();
+        System.out.println("result = " + result);
 
         if(exitVal != 0) return null; //비정상 종료
-
-        return new CarInformation();
+        ArrayList<String> infos = new ArrayList<>(Arrays.asList(result.split(",")));
+        System.out.println(infos.toString());
+        return new CarInformation(infos);
     }
 
 }

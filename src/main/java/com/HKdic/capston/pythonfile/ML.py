@@ -13,5 +13,6 @@ cv2.waitKey()
 implement Machine Learning ...
 '''
 
-carName = 'BMW 5시리즈 2020'
+# carName = 'BMW 5시리즈 2020'
+carName = 'sm3 2017'
 print(carName)

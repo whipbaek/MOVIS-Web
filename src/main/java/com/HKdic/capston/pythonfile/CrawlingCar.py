@@ -22,7 +22,7 @@ driver.maximize_window()
 time.sleep(2)
 daum = '다음 자동차 '
 keyword = sys.argv[1]
-
+print('hi')
 driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(daum + keyword)
 driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(Keys.RETURN)
 time.sleep(2)
@@ -32,7 +32,15 @@ time.sleep(4)
 
 element = driver.find_element(By.CLASS_NAME, 'box_model')
 element_png = element.screenshot_as_png
-with open(sys[2], "wb") as file:
+with open(sys.argv[2], "wb") as file:
     file.write(element_png)
 
-print('end!')
+print("제네시스 G70")
+print("4,904 ~ 5,846만원")
+print("SUV (중형)")
+print("가솔린,디젤")
+print("2151 ~ 3470cc")
+print("8.5 ~ 13.5km/l")
+print("5")
+
+# print('end!')

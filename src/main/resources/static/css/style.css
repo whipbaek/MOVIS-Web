@@ -6,6 +6,34 @@ http://www.templatemo.com/tm-486-new-event
 
 */
 
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.6;
+    background: #e4e4e4;
+    z-index: 99;
+    text-align: center;
+}
+
+
+
+#loading > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+}
+#loading > p {
+    position: absolute;
+    top: 57%;
+    left: 43%;
+    z-index: 101;
+}
+
 body {
 	/*	background: #ffffff;*/
     /*font-family: 'Poppins', sans-serif;*/
@@ -90,8 +118,8 @@ a {
 
 #overview,
 #register {
-  padding-top: 8rem;
-  padding-bottom:6rem;
+  padding-top: 12rem;
+  padding-bottom:2rem;
 }
 
 #detail, #video,
@@ -398,6 +426,24 @@ footer {
 #overview img {
   position: relative;
   padding-bottom: 32px;
+}
+
+#overview{
+    background: url('../tempimage/images/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    color: #FFFFFF;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
 
 

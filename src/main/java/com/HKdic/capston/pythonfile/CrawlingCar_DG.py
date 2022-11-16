@@ -23,9 +23,8 @@ class car_info():
 
 
 options = webdriver.ChromeOptions()
-# options.add_argument('--headless') # BackGround 작업
-driver = webdriver.Chrome(service=Service(
-    ChromeDriverManager().install()), options=options)  # driver 자동 Download
+options.add_argument('--headless') # BackGround 작업
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options) # driver 자동 Download
 # options.add_argument('--window-size=1800,800') # Window Size
 #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
@@ -36,7 +35,7 @@ driver.maximize_window()
 
 
 daum = '다음 자동차 '
-keyword = sys.argv[1]         #-----동근
+keyword = sys.argv[1]
 # keyword = "sm3 2017"
 
 driver.find_element(
@@ -51,10 +50,10 @@ driver.find_element(
 
 element = driver.find_element(By.CLASS_NAME, 'box_model')
 element_png = element.screenshot_as_png
-# with open("C:\\Users\\jibae\\Projects\\capston\\images\\car.png", "wb") as file:
-#     file.write(element_png)               #-----동근
-with open("./car.png", "wb") as file:
-    file.write(element_png)
+with open(sys.argv[2]+'car.png', "wb") as file:
+    file.write(element_png)               #-----동근
+# with open("./car.png", "wb") as file:
+#     file.write(element_png)
 
 # -----동근
 # 모델명, 연식
@@ -66,7 +65,7 @@ year = driver.find_element(By.CLASS_NAME, "link_selected").text
 image = driver.find_element(
     By.CSS_SELECTOR, "#mArticle > div.section_photoview > div > div > div.photo_body > div > a.link_thumb.image_view.\#thumbnail > img")
 car_img = image.get_attribute('src')
-urllib.request.urlretrieve(car_img, 'car_img.jpg')
+urllib.request.urlretrieve(car_img, sys.argv[2]+'car_img.jpg')
 
 # 가격, 외장, 연로, 배기량, 연비, 정원
 price = driver.find_element(
@@ -85,12 +84,14 @@ capacity = driver.find_element(
 car = car_info(title_model, year, price, exterior,
                fuel, displacement, efficiency, capacity)
 
-print(car.name+car.year)
-print("가격: "+car.price)
-print("외장: " + car.exterior)
-print("연료: "+car.fuel)
-print("배기량: "+car.displacement)
-print("연비: "+car.efficiency)
-print("정원: "+car.capacity+"명")
+# print(car.name+car.year)
+# print("가격: "+car.price)
+# print("외장: " + car.exterior)
+# print("연료: "+car.fuel)
+# print("배기량: "+car.displacement)
+# print("연비: "+car.efficiency)
+# print("정원: "+car.capacity+"명")
 
-print('end!')
+print(car.name+car.year,',',car.price,',',car.exterior,',',car.fuel,',',car.displacement,',',car.efficiency,',',car.capacity);
+
+driver.close()

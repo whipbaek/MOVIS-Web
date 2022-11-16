@@ -1,5 +1,7 @@
 package com.HKdic.capston.domain;
 
+import java.util.ArrayList;
+
 public class CarInformation {
 
     private String name; // 이름
@@ -18,6 +20,16 @@ public class CarInformation {
         this.displacement = displacement;
         this.mileage = mileage;
         this.limit = limit;
+    }
+
+    public CarInformation(ArrayList<String> infos){
+        this.name = infos.get(0);
+        this.price = infos.get(1);
+        this.trim = infos.get(2);
+        this.fuel = infos.get(3);
+        this.displacement = infos.get(4);
+        this.mileage = infos.get(5);
+        this.limit = infos.get(6);
     }
 
     public CarInformation() {}
@@ -61,4 +73,8 @@ public class CarInformation {
         this.limit = limit;
     }
 
+    @Override
+    public String toString(){
+        return name + "\n" + price + "\n" + trim + "\n" + fuel + "\n" + displacement + "\n" + mileage + "\n" + limit;
+    }
 }

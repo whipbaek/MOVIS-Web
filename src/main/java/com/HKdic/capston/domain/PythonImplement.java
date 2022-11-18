@@ -66,12 +66,20 @@ public class PythonImplement {
     public CarInformation getCarInformation(Process process) throws Exception{
         int exitVal = process.waitFor();
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
-        String result = br.readLine();
-        System.out.println("result = " + result);
+
+        String result;
+        ArrayList<String> infos = new ArrayList<>();
+        int i=0;
+        while((result=br.readLine()) != null){
+            System.out.println("result = " + result);
+            infos.add(result);
+            if(i==6) break;
+            i++;
+        }
+
+        System.out.println("infos = " + infos);
 
         if(exitVal != 0) return null; //비정상 종료
-        ArrayList<String> infos = new ArrayList<>(Arrays.asList(result.split(",")));
-        System.out.println(infos.toString());
         return new CarInformation(infos);
     }
 

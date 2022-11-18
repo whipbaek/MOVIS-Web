@@ -73,8 +73,4 @@ public class CarInformation {
         this.limit = limit;
     }
 
-    @Override
-    public String toString(){
-        return name + "\n" + price + "\n" + trim + "\n" + fuel + "\n" + displacement + "\n" + mileage + "\n" + limit;
-    }
 }

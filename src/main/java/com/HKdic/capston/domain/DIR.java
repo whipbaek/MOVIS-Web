@@ -21,31 +21,27 @@ public enum DIR {
      *      PYTHON_IMAGE_DIR : 파이선내에서 크롤링 후, 저장할 파일 경로
      */
 
-//    // Gram Side
-//    RESOURCE_HANDLER("/images/**"),
-//    LOCAL_RESOURCE_LOCATION("file:///C:/Users/jibae/Projects/MOVIS_Web/images/"),
-//    FILE_DIR("/C:/Users/jibae/Projects/MOVIS_Web/src/main/resources/static/images/"),
-//    PYTHON_DIR("C:\\Users\\jibae\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
-//    PYTHON_ML_DIR("C:\\Users\\jibae\\Projects\\MOVIS_Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
-//    PYTHON_CRAWLING_DIR("C:\\Users\\jibae\\Projects\\MOVIS_Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
-//    UPLOADED_IMG_DIR("C:\\Users\\jibae\\Projects\\MOVIS_Web\\src\\main\\resources\\static\\images\\testFile.jpg"),
-//    FILE_SAVE_DIR("/C:/Users/jibae/Projects/MOVIS_Web/src/main/resources/static/images/"),
-//    CAR_IMAGE_DIR("C:/Users/jibae/Projects/MOVIS_Web/images/car.png"),
-//    PYTHON_IMAGE_DIR("C:\\Users\\jibae\\Projects\\MOVIS_Web\\images\\");
-
-    // Desktop Side
+    // Gram Side
     RESOURCE_HANDLER("/images/**"),
-    LOCAL_RESOURCE_LOCATION("file:///C:/Users/whipbaek/Projects/MOVIS_Web/images/"),
-    FILE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/src/main/resources/static/images/"),
-    PYTHON_DIR("C:\\Users\\whipbaek\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
-    PYTHON_ML_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
-    PYTHON_CRAWLING_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
-    UPLOADED_IMG_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\images\\testFile.jpg"),
-    FILE_SAVE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/src/main/resources/static/images/"),
-    CAR_IMAGE_DIR("C:/Users/whipbaek/Projects/MOVIS-Web/images/car.png"),
-    PYTHON_IMAGE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\");
+    LOCAL_RESOURCE_LOCATION("file:///C:/Users/jibae/Projects/MOVIS-Web/images/"),
+    PYTHON_DIR("C:\\Users\\jibae\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
+    PYTHON_ML_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
+    PYTHON_CRAWLING_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
+    UPLOADED_IMG_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\testFile.jpg"),
+    FILE_SAVE_DIR("/C:/Users/jibae/Projects/MOVIS-Web/images/"),
+    CAR_IMAGE_DIR("C:/Users/jibae/Projects/MOVIS-Web/images/car.png"),
+    PYTHON_IMAGE_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\");
 
-
+//    // Desktop Side
+//    RESOURCE_HANDLER("/images/**"),
+//    LOCAL_RESOURCE_LOCATION("file:///C:/Users/whipbaek/Projects/MOVIS_Web/images/"),
+//    PYTHON_DIR("C:\\Users\\whipbaek\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
+//    PYTHON_ML_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
+//    PYTHON_CRAWLING_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
+//    UPLOADED_IMG_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\images\\testFile.jpg"),
+//    FILE_SAVE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/src/main/resources/static/images/"),
+//    CAR_IMAGE_DIR("C:/Users/whipbaek/Projects/MOVIS-Web/images/car.png"),
+//    PYTHON_IMAGE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\");
 
     private final String val;
 

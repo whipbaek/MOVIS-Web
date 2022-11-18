@@ -89,19 +89,19 @@
 		<div class="row">
 
 			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
-				<h2>제네시스 G70</h2>
+				<td th:text="${carInfo.name}"></td>
 				<br>
-				<h3>가격 : 4,904 ~ 5,846만원</h3>
-				<h3>외장 : SUV (중형)</h3>
-				<h3>연료 : 가솔린,디젤</h3>
-				<h3>연비 : 2151 ~ 3470cc</h3>
-				<h3>주행거리 : 8.5 ~ 13.5km/l</h3>
-				<h3>정원 : 5</h3>
+				<td th:text="${carInfo.price}">가격 : </td>
+				<td th:text="${carInfo.trim}">외장 : </td>
+				<td th:text="${carInfo.fuel}">연료 : </td>
+				<td th:text="${carInfo.displacement}">배기량 : </td>
+				<td th:text="${carInfo.mileage}">연비 : </td>
+				<td th:text="${carInfo.limit}">정원 : </td>
 			</div>
 					
 			<div class="wow fadeInUp col-md-8 col-sm-8" data-wow-delay="0.9s">
 <!--				<img th:src="@{/tempimage/images/overview-img.jpg}" class="img-responsive" alt="Overview">-->
-				<img th:src="@{/tempimage/images/blackpink.jpg}" style="border-radius: 15%" class="img-responsive" alt="Overview">
+				<img th:src="@{/images/car_img.jpg}" style="border-radius: 15%" class="img-responsive" alt="Overview">
 			</div>
 
 		</div>
@@ -232,42 +232,42 @@
 </section>
 
 
-<!-- =========================
-    CONTACT SECTION   
-============================== -->
-<section id="contact" class="parallax-section">
-	<div class="container">
-		<div class="row">
+<!--&lt;!&ndash; =========================-->
+<!--    CONTACT SECTION   -->
+<!--============================== &ndash;&gt;-->
+<!--<section id="contact" class="parallax-section">-->
+<!--	<div class="container">-->
+<!--		<div class="row">-->
 
-			<div class="wow fadeInUp col-md-offset-1 col-md-5 col-sm-6" data-wow-delay="0.6s">
-				<div class="contact_des">
-					<h3>New Event</h3>
-					<p>Proin sodales convallis urna eu condimentum. Morbi tincidunt augue eros, vitae pretium mi condimentum eget. Suspendisse eu turpis sed elit pretium congue.</p>
-					<p>Mauris at tincidunt felis, vitae aliquam magna. Sed aliquam fringilla vestibulum. Praesent ullamcorper mauris fermentum turpis scelerisque rutrum eget eget turpis.</p>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor.</p>
-					<a href="#" class="btn btn-danger">DOWNLOAD NOW</a>
-				</div>
-			</div>
+<!--			<div class="wow fadeInUp col-md-offset-1 col-md-5 col-sm-6" data-wow-delay="0.6s">-->
+<!--				<div class="contact_des">-->
+<!--					<h3>New Event</h3>-->
+<!--					<p>Proin sodales convallis urna eu condimentum. Morbi tincidunt augue eros, vitae pretium mi condimentum eget. Suspendisse eu turpis sed elit pretium congue.</p>-->
+<!--					<p>Mauris at tincidunt felis, vitae aliquam magna. Sed aliquam fringilla vestibulum. Praesent ullamcorper mauris fermentum turpis scelerisque rutrum eget eget turpis.</p>-->
+<!--					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor.</p>-->
+<!--					<a href="#" class="btn btn-danger">DOWNLOAD NOW</a>-->
+<!--				</div>-->
+<!--			</div>-->
 
-			<div class="wow fadeInUp col-md-5 col-sm-6" data-wow-delay="0.9s">
-				<div class="contact_detail">
-					<div class="section-title">
-						<h2>Keep in touch</h2>
-					</div>
-					<form action="#" method="post">
-						<input name="name" type="text" class="form-control" id="name" placeholder="Name">
-					  	<input name="email" type="email" class="form-control" id="email" placeholder="Email">
-					  	<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
-						<div class="col-md-6 col-sm-10">
-							<input name="submit" type="submit" class="form-control" id="submit" value="SEND">
-						</div>
-					</form>
-				</div>
-			</div>
+<!--			<div class="wow fadeInUp col-md-5 col-sm-6" data-wow-delay="0.9s">-->
+<!--				<div class="contact_detail">-->
+<!--					<div class="section-title">-->
+<!--						<h2>Keep in touch</h2>-->
+<!--					</div>-->
+<!--					<form action="#" method="post">-->
+<!--						<input name="name" type="text" class="form-control" id="name" placeholder="Name">-->
+<!--					  	<input name="email" type="email" class="form-control" id="email" placeholder="Email">-->
+<!--					  	<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>-->
+<!--						<div class="col-md-6 col-sm-10">-->
+<!--							<input name="submit" type="submit" class="form-control" id="submit" value="SEND">-->
+<!--						</div>-->
+<!--					</form>-->
+<!--				</div>-->
+<!--			</div>-->
 
-		</div>
-	</div>
-</section>
+<!--		</div>-->
+<!--	</div>-->
+<!--</section>-->
 
 
 <!-- =========================

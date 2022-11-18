@@ -84,14 +84,14 @@ capacity = driver.find_element(
 car = car_info(title_model, year, price, exterior,
                fuel, displacement, efficiency, capacity)
 
-# print(car.name+car.year)
-# print("가격: "+car.price)
-# print("외장: " + car.exterior)
-# print("연료: "+car.fuel)
-# print("배기량: "+car.displacement)
-# print("연비: "+car.efficiency)
-# print("정원: "+car.capacity+"명")
+print(car.name+car.year)
+print("가격: "+car.price)
+print("외장: " + car.exterior)
+print("연료: "+car.fuel)
+print("배기량: "+car.displacement)
+print("연비: "+car.efficiency)
+print("정원: "+car.capacity+"명")
 
-print(car.name+car.year,',',car.price,',',car.exterior,',',car.fuel,',',car.displacement,',',car.efficiency,',',car.capacity);
+# print(car.name+car.year,',',car.price,',',car.exterior,',',car.fuel,',',car.displacement,',',car.efficiency,',',car.capacity);
 
 driver.close()

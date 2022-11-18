@@ -20,6 +20,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     private PythonImplement pythonImplement = new PythonImplement();
     private int temp = 0;
+    private CarInformation carInformation = new CarInformation();
 
     @GetMapping
     public String movisMain() {
@@ -40,19 +41,18 @@ public class SpringUploadController implements WebMvcConfigurer {
         pythonImplement.implementML();
         System.out.println("car Name : " + nameOfCar);
         carInformation = pythonImplement.implementCrawling();
-//        CarInformation carInformation = new CarInformation("제네시스 G70", "4,904 ~ 5,846만원", "SUV (중형)", "가솔린,디젤", "2151 ~ 3470cc", "8.5 ~ 13.5km/l", "5");
 
-//        System.out.println(carInformation.toString());
-
-//        model.addAttribute("carInfo", carInformation);
-        model.addAttribute("filepath", CAR_IMAGE_DIR.getVal());
         temp = 1;
         return "redirect:/movis/result";
     }
 
     @GetMapping("/result")
-    public String redirectionPage(){
+    public String redirectionPage(Model model){
         while(temp != 1){}
+
+        model.addAttribute("carInfo", carInformation);
+        System.out.println("carInformation = " + carInformation);
+        model.addAttribute("filepath", CAR_IMAGE_DIR.getVal());
 
         return "movisResult";
     }

@@ -20,7 +20,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     private PythonImplement pythonImplement = new PythonImplement();
     private int temp = 0;
-    private CarInformation carInformation = new CarInformation();
+    public static CarInformation carInformation;
 
     @GetMapping
     public String movisMain() {
@@ -37,7 +37,6 @@ public class SpringUploadController implements WebMvcConfigurer {
             log.info("파일 저장 fullPath={}", fullPath);
             file.transferTo(new File(fullPath));
         }
-        CarInformation carInformation = new CarInformation();
         pythonImplement.implementML();
         System.out.println("car Name : " + nameOfCar);
         carInformation = pythonImplement.implementCrawling();

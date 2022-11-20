@@ -118,7 +118,7 @@ a {
 
 #overview,
 #register {
-  padding-top: 12rem;
+  padding-top: 6rem;
   padding-bottom:2rem;
 }
 
@@ -142,7 +142,8 @@ footer {
 #register h3,
 #venue h3,
 #contact h3 {
-    padding-bottom: 12px;
+    text-align: left;
+    padding-bottom: 0px;
 }
 
 #detail h3{
@@ -392,7 +393,7 @@ footer {
     Intro section              
 -----------------------------------------*/
 #intro {
-    background: url('../tempimage/images/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
+    background: url('../initialimage/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -429,7 +430,7 @@ footer {
 }
 
 #overview{
-    background: url('../tempimage/images/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
+    background: url('../initialimage/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -573,7 +574,7 @@ footer {
     Regsiter section              
 -----------------------------------------*/
 #register {
-    background: url('../images/register-bg.jpg') 50% 0 repeat-y fixed;
+    background: url('../initialimage/register-bg.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -679,7 +680,7 @@ footer {
    Venue section              
 -----------------------------------------*/
 #venue {
-    background: url('../images/venue-bg.jpg') 50% 0 repeat-y fixed;
+    background: url('../initialimage/venue-bg.jpg') 50% 0 repeat-y fixed;
     background-size: cover;
     background-position: center center;
     padding-top: 7rem;
@@ -706,7 +707,7 @@ footer {
    Contact section              
 -----------------------------------------*/
 #contact {
-    background: url('../images/contact-bg.jpg') 50% 0 repeat-y fixed;
+    background: url('../initialimage/contact-bg.jpg') 50% 0 repeat-y fixed;
     background-size: cover;
     background-position: center center;
 }
@@ -861,6 +862,7 @@ footer {
   #detail .col-md-4,
   #register form {
     padding-top: 32px;
+    padding-bottom: 20px;
   }
 
   .nav-tabs > li > a {

@@ -56,4 +56,9 @@ public class SpringUploadController implements WebMvcConfigurer {
         return "movisResult";
     }
 
+    @GetMapping("/select")
+    public String selectPage() {
+        return "movisSelect";
+    }
+
 }

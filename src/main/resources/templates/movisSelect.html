@@ -14,10 +14,10 @@
 <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
 <link th:href="@{/css/owl.theme.css}" rel="stylesheet">
 <link th:href="@{/css/owl.carousel.css}" rel="stylesheet">
-<link th:href="@{/css/icons.css}" rel="stylesheet"/>
+<link th:href="@{/css/selectbox.css}" rel="stylesheet">
 
 <!-- Main css -->
-<link th:href="@{/css/style.css}" rel="stylesheet">
+<link th:href="@{/css/style_select.css}" rel="stylesheet">
 
 
 	<!-- Google Font -->
@@ -42,6 +42,7 @@
 <!-- =========================
      NAVIGATION LINKS     
 ============================== -->
+
 <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
 	<div class="container">
 
@@ -54,70 +55,43 @@
 			</button>
 			<a href="#" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.7">MOVIS</a>
 		</div>
+
 	</div>
 </div>
 
-
 <!-- =========================
-    INTRO SECTION   
+    OVERVIEW SECTION   
 ============================== -->
-<section id="intro" class="parallax-section">
-	<div class="container">
+<section id="overview" class="parallax-section">
+	<div class="container-fluid ">
 		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1 class="wow fadeIn" data-wow-delay="1.0s">M O V I S</h1>
-				<h3 class="wow bounceIn" data-wow-delay="0.9s">"We can Find Every Car What you Lookin at RIGHT NOW"</h3>
+			<h1>분석 결과는 아래와 같습니다.</h1>
+			<h3>원하시는 차종을 선택해주세요.</h3>
+		</div>
 
-				<form id="uploadForm" th:action method="post" enctype="multipart/form-data">
-					<input id="uploadInput" type="file" name="file" onchange="formUploadMain()" style="display: none">
-					<a id="uploadBtn" onclick="onClickUploadMain();" class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="2.3s" style="font-size: 25px"> ADD Image &#128659; </a>
-				</form>
-
-				<div class="dropBox" th:name="file">
-					<h3>Drop File here</h3>
+		<div class="row ">
+			<div class="quotes">
+				<div class="card">
+					<div class="box box1" onclick="showLoader()">
+						<h1>sm3 2017 </h1>
+						<h2>일치율 : 88%</h2>
+					</div>
+					<div class="bg"></div>
 				</div>
-			</div>
-				<!-- Drag & Drop Box JS -->
-				<script>
-					const dropBox = document.querySelector('.dropBox');
-					const title = document.querySelector(".dropBox h3");
-
-					dropBox.addEventListener('dragenter', function(e) {
-						console.log('dragenter');
-					}); /* 박스 안에 Drag 들어왔을 때 */
-					dropBox.addEventListener('dragover', function(e) {
-						e.preventDefault();
-						console.log('dragover');
-
-						dropBox.style.backgroundColor = 'green';
-					}); /* 박스 안에 Drag를 하고 있을 때 */
-					dropBox.addEventListener('dragleave', function(e) {
-						console.log('dragleave');
-
-						dropBox.style.backgroundColor = '';
-					}); /* 박스 밖으로 Drag가 나갈 때 */
-
-					/* 박스 안에서 Drag를 Drop했을 때 */
-
-					dropBox.addEventListener('drop', function(e) {
-						e.preventDefault();
-						dropBox.style.backgroundColor = '';
-						const data = e.dataTransfer.files[0];
-						const formData = new FormData();
-						formData.append('file', data);
-
-						fetch('http://localhost:8080/movis',{
-							method: 'POST',
-							headers:{},
-							body : formData
-						});
-
-						// redirect 경로 지정
-						window.location.href = 'http://localhost:8080/movis/result';
-						$.LoadingOverlay("show");
-					});
-
-				</script>
+				<div class="card">
+					<div class="box box2">
+						<h1>BMW 5시리즈 2020 </h1>
+						<h2>일치율 : 15%</h2>
+					</div>
+					<div class="bg"></div>
+				</div>
+				<div class="card">
+					<div class="box box3">
+						<h1>현대 아반떼 2019</h1>
+						<h2>일치율 : 7%</h2>
+					</div>
+					<div class="bg"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -136,7 +110,7 @@
 			<div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">
 				<div class="section-title">
 					<h2>Do you have Questions?</h2>
-					<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
+					<p>아래에서 정보를 확인해보세요.</p>
 				</div>
 			</div>
 
@@ -147,13 +121,13 @@
    						<div class="panel-heading" role="tab" id="headingOne">
       						<h4 class="panel-title">
         						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          							 What is Responsive Design?
+          							 MOVIS는 어떤 서비스인가요?
         						</a>
       						</h4>
     					</div>
    						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       						<div class="panel-body">
-        						<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
+        						<p>모비스는 언제 어디서든 알고 싶은 자동차의 정보를 알려주는 서비스 입니다.</p>
 								<p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>
       						</div>
    						 </div>
@@ -198,6 +172,7 @@
 	</div>
 </section>
 
+
 <!-- =========================
     FOOTER SECTION   
 ============================== -->
@@ -207,6 +182,9 @@
 
 			<div class="col-md-12 col-sm-12">
 				<p class="wow fadeInUp" data-wow-delay="0.6s">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+                    
+                   
+
 				<ul class="social-icon">
 					<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
 					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
@@ -239,6 +217,7 @@
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 <script type="text/javascript" th:src="@{/js/loadingoverlay.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/myjs.js}"></script>
+
 
 </body>
 </html>

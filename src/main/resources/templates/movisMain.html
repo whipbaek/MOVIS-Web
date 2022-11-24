@@ -68,8 +68,8 @@
 				<h1 class="wow fadeIn" data-wow-delay="1.0s">M O V I S</h1>
 				<h3 class="wow bounceIn" data-wow-delay="0.9s">"We can Find Every Car What you Lookin at RIGHT NOW"</h3>
 
-				<form id="uploadForm" th:action method="post" enctype="multipart/form-data">
-					<input id="uploadInput" type="file" name="file" onchange="formUploadMain()" style="display: none">
+				<form name="uploadForm" th:action method="post" enctype="multipart/form-data">
+					<input id="uploadInput" type="file" name="file" onchange="formUpload()" style="display: none">
 					<a id="uploadBtn" onclick="onClickUploadMain();" class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="2.3s" style="font-size: 25px"> ADD Image &#128659; </a>
 				</form>
 

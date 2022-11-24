@@ -6,6 +6,7 @@ import static com.HKdic.capston.domain.PythonImplement.nameOfCars;
 import com.HKdic.capston.domain.CarInformation;
 import com.HKdic.capston.domain.PythonImplement;
 import lombok.extern.slf4j.Slf4j;
+import org.python.antlr.op.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
 
     @PostMapping
-    public String saveFile(@RequestParam MultipartFile file, Model model) throws Exception {
+    public String saveFile(@RequestParam MultipartFile file) throws Exception {
         temp = 0;
         // Save File
         if (!file.isEmpty()) {
@@ -63,6 +64,18 @@ public class SpringUploadController implements WebMvcConfigurer {
     @GetMapping("/select")
     public String selectPage() {
         return "movisSelect";
+    }
+
+    @PostMapping("/select")
+    public String testMapping2(@RequestParam("index") String index, Model model) {
+        model.addAttribute("index", index);
+        return "selectResultTest";
+    }
+
+    @PostMapping("/redir")
+    public String testMapping(@RequestParam("index") int index, Model model) {
+        model.addAttribute("carInfo", carInformations.get(index));
+        return "movisResult";
     }
 
 }

@@ -68,40 +68,48 @@
 <div class="row">
 			<h1 style="text-align: center">분석 결과는 아래와 같습니다.</h1>
 </div>
-<div class="quotes row">
-
-	<div class="col-md-6 col-lg-4 mb-4">
-				<div class="card-hover">
-					<div class="box box1" onclick="showLoader()">
+	<div class="quotes row">
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="card-hover">
+				<form name="uploadForm" th:action method="post">
+					<button class="box box1" onclick="formUpload()" style="border: none; outline: none">
+						<input name="index" type="text" value="0" style="display: none">
 						<h1>sm3 2017 </h1>
 						<h2>일치율 : 88%</h2>
-					</div>
-					<h5 class="mb-1" style="padding-bottom: 10px; padding-top: -5px" >no.1</h5>
-<!--					<span class="text-muted">UI / UX</span>-->
-				</div>
+					</button>
+				</form>
+				<h5 class="mb-1" style="padding-bottom: 10px; padding-top: -5px" >no.1</h5>
+	<!--					<span class="text-muted">UI / UX</span>-->
 			</div>
-			<div class="col-md-6 col-lg-4 mb-4" >
-				<div class="card-hover">
-					<div class="box box2" onclick="showLoader()">
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4" >
+			<div class="card-hover">
+				<form name="uploadForm" th:action method="post">
+					<button class="box box2" onclick="formUpload()" style="border: none; outline: none">
+						<input name="index" type="text" value="1" style="display: none">
 						<h1>BMW 5시리즈 2020 </h1>
 						<h2>일치율 : 15%</h2>
-					</div>
-					<h5 class="mb-1">no.2</h5>
-<!--					<span class="text-muted">Javascript</span>-->
-				</div>
+					</button>
+				</form>
+				<h5 class="mb-1">no.2</h5>
+	<!--					<span class="text-muted">Javascript</span>-->
 			</div>
-			<div class="col-md-6 col-lg-4 mb-4">
-				<div class="card-hover">
-					<div class="box box3" onclick="showLoader()">
+		</div>
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="card-hover">
+				<form name="uploadForm" th:action method="post">
+					<button class="box box3" onclick="formUpload()" style="border: none; outline: none">
+						<input name="index"type="text" value="2" style="display: none">
 						<h1>현대 아반떼 2019 </h1>
 						<h2>일치율 :7%</h2>
-					</div>
-					<h5 class="mb-1">no.3</h5>
-<!--					<span class="text-muted">Business, Marketing</span>-->
-				</div>
+					</button>
+				</form>
+				<h5 class="mb-1">no.3</h5>
+	<!--					<span class="text-muted">Business, Marketing</span>-->
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 
 <!-- =========================

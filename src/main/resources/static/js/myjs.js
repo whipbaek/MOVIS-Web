@@ -5,9 +5,9 @@ function showLoader(){
     }, 3000);
 }
 
-function formUploadMain(){
-    document.getElementById("uploadForm").submit();
-    $.LoadingOverlay("show");
+function formUpload(){
+    document.getElementsByName("uploadForm").submit();
+    $.LoadingOverlay("show")
 }
 
 

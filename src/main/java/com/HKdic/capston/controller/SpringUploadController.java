@@ -1,6 +1,7 @@
 package com.HKdic.capston.controller;
 import static com.HKdic.capston.domain.DIR.*;
 import static com.HKdic.capston.domain.PythonImplement.nameOfCar;
+import static com.HKdic.capston.domain.PythonImplement.nameOfCars;
 
 import com.HKdic.capston.domain.CarInformation;
 import com.HKdic.capston.domain.PythonImplement;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.io.File;
+import java.util.ArrayList;
 
 @Slf4j
 @Controller
@@ -20,7 +22,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     private PythonImplement pythonImplement = new PythonImplement();
     private int temp = 0;
-    public static CarInformation carInformation;
+    public static ArrayList<CarInformation> carInformations = new ArrayList<>();
 
     @GetMapping
     public String movisMain() {
@@ -38,22 +40,24 @@ public class SpringUploadController implements WebMvcConfigurer {
             file.transferTo(new File(fullPath));
         }
         pythonImplement.implementML();
-        System.out.println("car Name : " + nameOfCar);
-        carInformation = pythonImplement.implementCrawling();
-
+        for (String carName : nameOfCars) {
+            System.out.println("carName = " + carName);
+        }
+        System.out.println("크롤링 시작");
+        pythonImplement.implementCrawling();
+        System.out.println("크롤링 끝");
         temp = 1;
-        return "redirect:/movis/result";
+        return "redirect:/movis/redir";
     }
 
-    @GetMapping("/result")
+    @GetMapping("/redir")
     public String redirectionPage(Model model){
         while(temp != 1){}
 
-        model.addAttribute("carInfo", carInformation);
-        System.out.println("carInformation = " + carInformation);
+        model.addAttribute("carInfos", carInformations);
         model.addAttribute("filepath", CAR_IMAGE_DIR.getVal());
 
-        return "movisResult";
+        return "movisSelect";
     }
 
     @GetMapping("/select")

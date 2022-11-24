@@ -8,7 +8,7 @@ http://www.templatemo.com/tm-486-new-event
 
 .quotes {
     width: 80vw;
-    min-height: 400px;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -233,6 +233,7 @@ a {
 #register {
   padding-top: 6rem;
   padding-bottom:2rem;
+  height: inherit;
 }
 
 #detail, #video,

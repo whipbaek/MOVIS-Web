@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
+import static com.HKdic.capston.controller.SpringUploadController.carInformations;
 import static com.HKdic.capston.domain.DIR.*;
 
 /* Class For Implement Python File */
@@ -14,6 +13,7 @@ import static com.HKdic.capston.domain.DIR.*;
 public class PythonImplement {
 
     public static String nameOfCar = "";
+    public static ArrayList<String> nameOfCars = new ArrayList<>();
 
     public Process makeProcess(String command, String pythonFile, String arg1) throws IOException {
         return (new ProcessBuilder(command, pythonFile, arg1)).start();
@@ -32,19 +32,24 @@ public class PythonImplement {
 
     public void implementML() throws Exception{
         Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_ML_DIR.getVal(), UPLOADED_IMG_DIR.getVal());
-        nameOfCar = getCarName(process);
+        getCarName(process);
     }
 
-    public String getCarName(Process process) throws Exception {
+    public void getCarName(Process process) throws Exception {
         int exitVal = process.waitFor();
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
 
         String result;
-        result = br.readLine(); //get car's name from PythonFile
-        System.out.println("result = " + result);
-        if(exitVal != 0) return null;
+        int i=0;
+        while((result=br.readLine()) != null){
+            System.out.println("result = " + result);
+            nameOfCars.add(result);
+            if(i==3) break;
+            i++;
+        }
 
-        return result;
+        System.out.println("끝남.");
+
     }
 
     /**
@@ -54,13 +59,14 @@ public class PythonImplement {
      * return : Car's Basic Information
      */
 
-    public CarInformation implementCrawling() throws Exception{
-        if(nameOfCar == " ") {
-            return null;
+    public void implementCrawling() throws Exception{
+        if(nameOfCars.size() == 0) {
+            return;
         }
-        Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), nameOfCar, PYTHON_IMAGE_DIR.getVal());
-        return getCarInformation(process);
-
+        for (String carName : nameOfCars) {
+            Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), carName, PYTHON_IMAGE_DIR.getVal());
+            carInformations.add(getCarInformation(process));
+        }
     }
 
     public CarInformation getCarInformation(Process process) throws Exception{

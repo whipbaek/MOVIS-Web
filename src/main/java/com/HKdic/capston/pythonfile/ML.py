@@ -13,6 +13,10 @@ cv2.waitKey()
 implement Machine Learning ...
 '''
 
-# carName = 'BMW 5시리즈 2020'
-carName = 'sm3 2017'
-print(carName)
+carName0 = 'sm3 2017'
+carName1 = 'BMW 5시리즈 2020'
+carName2 = '현대 아반떼 2019'
+
+print(carName0)
+print(carName1)
+print(carName2)

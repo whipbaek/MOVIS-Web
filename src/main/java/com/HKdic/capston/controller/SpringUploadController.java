@@ -74,8 +74,31 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     @PostMapping("/redir")
     public String testMapping(@RequestParam("index") int index, Model model) {
+
+        int firstIndex;
+        int secondIndex;
+        if(index == 0){
+            firstIndex = 1;
+            secondIndex= 2;
+        } else if(index == 1){
+            firstIndex = 0;
+            secondIndex = 2;
+        } else{
+            firstIndex = 0;
+            secondIndex = 1;
+        }
+
+
         model.addAttribute("carInfo", carInformations.get(index));
+        model.addAttribute("carInfos", carInformations);
+        model.addAttribute("index", index);
+        model.addAttribute("firstIndex", firstIndex);
+        model.addAttribute("secondIndex", secondIndex);
+        model.addAttribute("firstCarInfo", carInformations.get(firstIndex));
+        model.addAttribute("secondCarInfo", carInformations.get(secondIndex));
+
         return "movisResult";
     }
+
 
 }

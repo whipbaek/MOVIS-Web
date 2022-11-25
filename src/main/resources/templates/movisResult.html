@@ -2,82 +2,71 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 
-<title>MOVIS - Find Car What you lookin at</title>
-<meta name="description" content="">
-<meta name="author" content="">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MOVIS - Find Car What you lookin at</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-<link th:href="@{/css/animate.css}" rel="stylesheet">
-<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
-<link th:href="@{/css/owl.theme.css}" rel="stylesheet">
-<link th:href="@{/css/owl.carousel.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/css/owl.theme.css}" rel="stylesheet">
+    <link th:href="@{/css/owl.carousel.css}" rel="stylesheet">
+    <link th:href="@{/css/theme-purple.css}" rel="stylesheet">
+    <link th:href="@{/css/theme-purple.min.css}" rel="stylesheet">
+    <link th:href="@{/css/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{/css/iconsmind.css}" rel="stylesheet">
 
-<!-- Main css -->
-<link th:href="@{/css/style.css}" rel="stylesheet">
+    <!-- Main css -->
+    <link th:href="@{/css/style_result.css}" rel="stylesheet">
 
 
-	<!-- Google Font -->
-<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
-<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
 
 
 </head>
 <body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
 <!-- =========================
-     PRE LOADER       
+     PRE LOADER
 ============================== -->
 
 <div class="preloader">
 
-	<div class="sk-rotating-plane"></div>
+    <div class="sk-rotating-plane"></div>
 
 </div>
 
 
 <!-- =========================
-     NAVIGATION LINKS     
+     NAVIGATION LINKS
 ============================== -->
-<audio controls autoplay style="display:none;">
-	<source th:src="@{/audio/voice.mp3}" type="audio/mp3">
-</audio>
+<!--<audio controls autoplay style="display:none;">-->
+<!--	<source th:src="@{/audio/voice.mp3}" type="audio/mp3">-->
+<!--</audio>-->
+
 <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
-	<div class="container">
+    <div class="container">
 
-		<!-- navbar header -->
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-			</button>
-			<a href="#" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.7">MOVIS</a>
-		</div>
-
-<!--		<div class="collapse navbar-collapse">-->
-
-<!--			<ul class="nav navbar-nav navbar-right">-->
-<!--				<li><a href="#intro" class="smoothScroll">Intro</a></li>-->
-<!--				<li><a href="#overview" class="smoothScroll">Overview</a></li>-->
-<!--				<li><a href="#speakers" class="smoothScroll">Speakers</a></li>-->
-<!--				<li><a href="#program" class="smoothScroll">Programs</a></li>-->
-<!--				<li><a href="#register" class="smoothScroll">Register</a></li>-->
-<!--				<li><a href="#venue" class="smoothScroll">Venue</a></li>-->
-<!--				<li><a href="#sponsors" class="smoothScroll">Sponsors</a></li>-->
-<!--				<li><a href="#contact" class="smoothScroll">Contact</a></li>-->
-<!--			</ul>-->
-
-<!--		</div>-->
-
-	</div>
+        <!-- navbar header -->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.7">MOVIS</a>
+        </div>
+    </div>
 </div>
 
 
 <!-- =========================
-    INTRO SECTION   
+    INTRO SECTION
 ============================== -->
 <!--<section id="intro" class="parallax-section">-->
 <!--	-->
@@ -85,216 +74,210 @@
 
 
 <!-- =========================
-    OVERVIEW SECTION   
+    OVERVIEW SECTION
 ============================== -->
-<section id="overview" class="parallax-section">
-	<div class="container">
-		<div class="row">
-			<h1><td th:text="${carInfo.name}"></td></h1><br>
-		</div>
-		<div class="row">
-			<div class="wow fadeInUp col-md-4 " data-wow-delay="0.6s">
-				<h3><td th:text="${carInfo.price}"></td></h3><br>
-				<h3><td th:text="${carInfo.trim}"></td></h3><br>
-				<h3><td th:text="${carInfo.fuel}"></td></h3><br>
-				<h3><td th:text="${carInfo.displacement}"></td></h3><br>
-				<h3><td th:text="${carInfo.mileage}"></td></h3><br>
-				<h3><td th:text="${carInfo.limit}"></td></h3><br>
-			</div>
-					
-			<div class="wow fadeInUp col-md-8 " data-wow-delay="0.9s">
-				<img th:src="@{/images/car_img.jpg}" style="border-radius: 15%" class="img-responsive" alt="Overview">
-			</div>
-		</div>
-	</div>
-</section>
+<section class="position-relative pb-lg-7 overflow-hidden">
+    <div class="container pb-7 pt-7 pt-lg-0 z-index-1">
+        <div class="row align-items-center justify-content-between">
+            <div class="order-last order-lg-1 col-lg-5">
+                <h1 class="mb-4 display-5" data-aos="fade-right"><td th:text="${carInfo.name}"></td></h1><br>
+                <p class="mb-5" data-aos="fade-up">
+                    찾으신 차량의 정보는 아래와 같습니다.
+                </p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled d-flex flex-column mb-0">
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    <td th:text="${carInfo.price}"></td>
+                                </h3>
+                            </li>
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    <td th:text="${carInfo.trim}"></td>
+                                </h3>
+                            </li>
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    <td th:text="${carInfo.fuel}"></td>
+                                </h3>
+                            </li>
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    <td th:text="${carInfo.displacement}"></td>
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled d-flex flex-column mb-0">
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    <td th:text="${carInfo.mileage}"></td>
+                                </h3>
+                            </li>
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    <td th:text="${carInfo.limit}"></td>
+                                </h3>
+                            </li>
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    Well coded
+                                </h3>
+                            </li>
+                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                                <img th:src="@{/images/svg/check.svg}">
+                                <i class="fs-5 me-2 lh-1 align-middle"></i>
+                                <h3 class="flex-grow-1">
+                                    Free lifetime updates
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="d-grid gap-2" data-aos="fade-up" data-aos-delay="250">
+                    <form name ="uploadForm" th:action method="post">
+                    <button class="btn btn-primary btn-block" onclick="formUpload()"><h5><img th:src="@{/images/svg/car-front-fill.svg}">
+                        <td th:text="${firstCarInfo.name}"></td><img th:src="@{/images/svg/arrow-right-short.svg}"></h5>
+                        <input name="index" type="text" th:value="${firstIndex}" style="display: none">
+                    </button>
+                    </form>
+                    <br>
 
+                    <form name ="uploadForm" th:action method="post">
+                    <button class="btn btn-primary btn-block" onclick="formUpload()"><h5><img th:src="@{/images/svg/car-front-fill.svg}">
+                        <td th:text="${secondCarInfo.name}"></td><img th:src="@{/images/svg/arrow-right-short.svg}"></h5>
+                        <input name="index" type="text" th:value="${secondIndex}" style="display: none">
+                    </button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-10 ms-lg-auto order-1 order-lg-last mb-6 mb-lg-0">
+                <div class="position-relative" data-aos="fade-left"
+                     data-aos-delay="150">
+                    <img th:if="${index == 0}" th:src="@{/images/car_img0.jpg}" style="border-radius: 15%" class="img-responsive" alt="">
+                    <img th:if="${index == 1}" th:src="@{/images/car_img1.jpg}" style="border-radius: 15%" class="img-responsive" alt="">
+                    <img th:if="${index == 2}" th:src="@{/images/car_img2.jpg}" style="border-radius: 15%" class="img-responsive" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- =========================
-    DETAIL SECTION   
-============================== -->
-<!--<section id="detail" class="parallax-section">-->
-<!--	<div class="container">-->
-<!--		<div class="row">-->
-
-<!--			<div class="wow fadeInLeft col-md-4 col-sm-4" data-wow-delay="0.3s">-->
-<!--				<i class="fa fa-group"></i>-->
-<!--				<h3>가격</h3>-->
-<!--&lt;!&ndash;				<p>4,904 ~ 5,846만원</p>&ndash;&gt;-->
-<!--			</div>-->
-
-<!--			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">-->
-<!--				<i class="fa fa-clock-o"></i>-->
-<!--				<h3>외장</h3>-->
-<!--&lt;!&ndash;				<p>SUV (중형)</p>&ndash;&gt;-->
-<!--			</div>-->
-
-<!--			<div class="wow fadeInRight col-md-4 col-sm-4" data-wow-delay="0.9s">-->
-<!--				<i class="fa fa-microphone"></i>-->
-<!--				<h3>연료</h3>-->
-<!--&lt;!&ndash;				<p>가솔린,디젤</p>&ndash;&gt;-->
-<!--			</div>-->
-
-<!--			<div class="wow fadeInLeft col-md-4 col-sm-4" data-wow-delay="0.9s">-->
-<!--				<i class="fa fa-microphone"></i>-->
-<!--				<h3>연비</h3>-->
-<!--&lt;!&ndash;				<p>2151 ~ 3470cc</p>&ndash;&gt;-->
-<!--			</div>-->
-
-<!--			<div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.9s">-->
-<!--				<i class="fa fa-microphone"></i>-->
-<!--				<h3>주행거리</h3>-->
-<!--&lt;!&ndash;				<p>8.5 ~ 13.5km/l</p>&ndash;&gt;-->
-<!--			</div>-->
-
-<!--			<div class="wow fadeInRight col-md-4 col-sm-4" data-wow-delay="0.9s">-->
-<!--				<i class="fa fa-microphone"></i>-->
-<!--				<h3>정원</h3>-->
-<!--&lt;!&ndash;				<p>5명</p>&ndash;&gt;-->
-<!--			</div>-->
-
-<!--		</div>-->
-<!--	</div>-->
-<!--</section>-->
-
-
-<!-- =========================
-    FAQ SECTION   
+    FAQ SECTION
 ============================== -->
 <section id="faq" class="parallax-section">
-	<div class="container">
-		<div class="row">
+    <div class="container">
+        <div class="row">
 
-			<!-- Section title
-			================================================== -->
-			<div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">
-				<div class="section-title">
-					<h2>Do you have Questions?</h2>
-					<p>아래에서 정보를 확인해보세요.</p>
-				</div>
-			</div>
+            <!-- Section title
+            ================================================== -->
+            <div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">
+                <div class="section-title">
+                    <h2>Do you have Questions?</h2>
+                    <p>아래에서 정보를 확인해보세요.</p>
+                </div>
+            </div>
 
-			<div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
-				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-  					<div class="panel panel-default">
-   						<div class="panel-heading" role="tab" id="headingOne">
-      						<h4 class="panel-title">
-        						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          							 MOVIS는 어떤 서비스인가요?
-        						</a>
-      						</h4>
-    					</div>
-   						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      						<div class="panel-body">
-        						<p>모비스는 언제 어디서든 알고 싶은 자동차의 정보를 알려주는 서비스 입니다.</p>
-								<p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>
-      						</div>
-   						 </div>
- 					</div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    MOVIS는 어떤 서비스인가요?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <p>모비스는 언제 어디서든 알고 싶은 자동차의 정보를 알려주는 서비스 입니다.</p>
+                                <p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>
+                            </div>
+                        </div>
+                    </div>
 
-    				<div class="panel panel-default">
-   						<div class="panel-heading" role="tab" id="headingTwo">
-      						<h4 class="panel-title">
-        						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          							What are latest UX Developments?
-        						</a>
-      						</h4>
-    					</div>
-   						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      						<div class="panel-body">
-                            	<p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>
-        						<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
-      						</div>
-   						 </div>
- 					</div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What are latest UX Developments?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>
+                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
+                            </div>
+                        </div>
+                    </div>
 
- 					<div class="panel panel-default">
-   						<div class="panel-heading" role="tab" id="headingThree">
-      						<h4 class="panel-title">
-        						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          							What things about Social Media will be discussed?
-        						</a>
-      						</h4>
-    					</div>
-   						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      						<div class="panel-body">
-                            	<p>Aenean vulputate finibus justo et feugiat. Ut turpis lacus, dapibus quis justo id, porttitor tempor justo. Quisque ut libero sapien. Integer tellus nisl, efficitur sed dolor at, vehicula finibus massa.</p>
-        						<p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
-      						</div>
-   						 </div>
- 					 </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    What things about Social Media will be discussed?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <p>Aenean vulputate finibus justo et feugiat. Ut turpis lacus, dapibus quis justo id, porttitor tempor justo. Quisque ut libero sapien. Integer tellus nisl, efficitur sed dolor at, vehicula finibus massa.</p>
+                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
+                            </div>
+                        </div>
+                    </div>
 
- 				 </div>
-			</div>
+                </div>
+            </div>
 
-		</div>
-	</div>
+        </div>
+    </div>
 </section>
 
-
-<!--&lt;!&ndash; =========================-->
-<!--    CONTACT SECTION   -->
-<!--============================== &ndash;&gt;-->
-<!--<section id="contact" class="parallax-section">-->
-<!--	<div class="container">-->
-<!--		<div class="row">-->
-
-<!--			<div class="wow fadeInUp col-md-offset-1 col-md-5 col-sm-6" data-wow-delay="0.6s">-->
-<!--				<div class="contact_des">-->
-<!--					<h3>New Event</h3>-->
-<!--					<p>Proin sodales convallis urna eu condimentum. Morbi tincidunt augue eros, vitae pretium mi condimentum eget. Suspendisse eu turpis sed elit pretium congue.</p>-->
-<!--					<p>Mauris at tincidunt felis, vitae aliquam magna. Sed aliquam fringilla vestibulum. Praesent ullamcorper mauris fermentum turpis scelerisque rutrum eget eget turpis.</p>-->
-<!--					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor.</p>-->
-<!--					<a href="#" class="btn btn-danger">DOWNLOAD NOW</a>-->
-<!--				</div>-->
-<!--			</div>-->
-
-<!--			<div class="wow fadeInUp col-md-5 col-sm-6" data-wow-delay="0.9s">-->
-<!--				<div class="contact_detail">-->
-<!--					<div class="section-title">-->
-<!--						<h2>Keep in touch</h2>-->
-<!--					</div>-->
-<!--					<form action="#" method="post">-->
-<!--						<input name="name" type="text" class="form-control" id="name" placeholder="Name">-->
-<!--					  	<input name="email" type="email" class="form-control" id="email" placeholder="Email">-->
-<!--					  	<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>-->
-<!--						<div class="col-md-6 col-sm-10">-->
-<!--							<input name="submit" type="submit" class="form-control" id="submit" value="SEND">-->
-<!--						</div>-->
-<!--					</form>-->
-<!--				</div>-->
-<!--			</div>-->
-
-<!--		</div>-->
-<!--	</div>-->
-<!--</section>-->
-
-
 <!-- =========================
-    FOOTER SECTION   
+    FOOTER SECTION
 ============================== -->
 <footer>
-	<div class="container">
-		<div class="row">
+    <div class="container">
+        <div class="row">
 
-			<div class="col-md-12 col-sm-12">
-				<p class="wow fadeInUp" data-wow-delay="0.6s">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    
-                   
+            <div class="col-md-12 col-sm-12">
+                <p class="wow fadeInUp" data-wow-delay="0.6s">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
 
-				<ul class="social-icon">
-					<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
-					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-					<li><a href="#" class="fa fa-dribbble wow fadeInUp" data-wow-delay="1.6s"></a></li>
-					<li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-					<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s"></a></li>
-				</ul>
 
-			</div>
-			
-		</div>
-	</div>
+
+                <ul class="social-icon">
+                    <li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
+                    <li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+                    <li><a href="#" class="fa fa-dribbble wow fadeInUp" data-wow-delay="1.6s"></a></li>
+                    <li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
+                    <li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s"></a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
 </footer>
 
 
@@ -303,7 +286,7 @@
 
 
 <!-- =========================
-     SCRIPTS   
+     SCRIPTS
 ============================== -->
 
 <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
@@ -313,6 +296,9 @@
 <script type="text/javascript" th:src="@{/js/smoothscroll.js}"></script>
 <script type="text/javascript" th:src="@{/js/wow.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
+<script type="text/javascript" th:src="@{/js/theme.bundle.js}"></script>
+
+
 
 </body>
 </html>

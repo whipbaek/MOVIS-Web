@@ -19,8 +19,8 @@ public class PythonImplement {
         return (new ProcessBuilder(command, pythonFile, arg1)).start();
     }
 
-    public Process makeProcess(String command, String pythonFile, String arg1, String arg2) throws IOException {
-        return (new ProcessBuilder(command, pythonFile, arg1, arg2)).start();
+    public Process makeProcess(String command, String pythonFile, String arg1, String arg2, String arg3, String arg4) throws IOException {
+        return (new ProcessBuilder(command, pythonFile, arg1, arg2, arg3, arg4)).start();
     }
 
     /**
@@ -63,13 +63,11 @@ public class PythonImplement {
         if(nameOfCars.size() == 0) {
             return;
         }
-        for (String carName : nameOfCars) {
-            Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), carName, PYTHON_IMAGE_DIR.getVal());
-            carInformations.add(getCarInformation(process));
-        }
+        Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), nameOfCars.get(0), nameOfCars.get(1), nameOfCars.get(2), PYTHON_IMAGE_DIR.getVal());
+        getCarInformation(process);
     }
 
-    public CarInformation getCarInformation(Process process) throws Exception{
+    public void getCarInformation(Process process) throws Exception{
         int exitVal = process.waitFor();
         BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
 
@@ -79,14 +77,17 @@ public class PythonImplement {
         while((result=br.readLine()) != null){
             System.out.println("result = " + result);
             infos.add(result);
-            if(i==6) break;
             i++;
+            if(i==7){
+                i = 0;
+                carInformations.add(new CarInformation(infos));
+                infos.clear();
+            }
         }
 
         System.out.println("infos = " + infos);
 
-        if(exitVal != 0) return null; //비정상 종료
-        return new CarInformation(infos);
+        if(exitVal != 0) return; //비정상 종료
     }
 
 }

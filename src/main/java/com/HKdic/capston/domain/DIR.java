@@ -37,7 +37,7 @@ public enum DIR {
     LOCAL_RESOURCE_LOCATION("file:///C:/Users/whipbaek/Projects/MOVIS-Web/images/"),
     PYTHON_DIR("C:\\Users\\whipbaek\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
     PYTHON_ML_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
-    PYTHON_CRAWLING_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
+    PYTHON_CRAWLING_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCarTh.py"),
     UPLOADED_IMG_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\testFile.jpg"),
     FILE_SAVE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/images/"),
     CAR_IMAGE_DIR("C:/Users/whipbaek/Projects/MOVIS-Web/images/car.png"),

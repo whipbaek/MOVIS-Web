@@ -14,7 +14,7 @@
     <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
     <link th:href="@{/css/owl.theme.css}" rel="stylesheet">
     <link th:href="@{/css/owl.carousel.css}" rel="stylesheet">
-    <link th:href="@{/css/theme-purple.css}" rel="stylesheet">
+<!--    <link th:href="@{/css/theme-purple.css}" rel="stylesheet">-->
     <link th:href="@{/css/theme-purple.min.css}" rel="stylesheet">
     <link th:href="@{/css/bootstrap-icons.css}" rel="stylesheet">
     <link th:href="@{/css/iconsmind.css}" rel="stylesheet">
@@ -45,32 +45,22 @@
 <!-- =========================
      NAVIGATION LINKS
 ============================== -->
-<!--<audio controls autoplay style="display:none;">-->
-<!--	<source th:src="@{/audio/voice.mp3}" type="audio/mp3">-->
-<!--</audio>-->
 
 <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
     <div class="container">
 
         <!-- navbar header -->
         <div class="navbar-header">
-            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon icon-bar"></span>
-                <span class="icon icon-bar"></span>
-                <span class="icon icon-bar"></span>
-            </button>
-            <a href="#" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.7">MOVIS</a>
+<!--            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+<!--                <span class="icon icon-bar"></span>-->
+<!--                <span class="icon icon-bar"></span>-->
+<!--                <span class="icon icon-bar"></span>-->
+<!--            </button>-->
+            <a th:href="@{/movis}" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.7">MOVIS</a>
         </div>
+
     </div>
 </div>
-
-
-<!-- =========================
-    INTRO SECTION
-============================== -->
-<!--<section id="intro" class="parallax-section">-->
-<!--	-->
-<!--</section>-->
 
 
 <!-- =========================
@@ -133,20 +123,6 @@
                                     <td th:text="${carInfo.limit}"></td>
                                 </h3>
                             </li>
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    Well coded
-                                </h3>
-                            </li>
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    Free lifetime updates
-                                </h3>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -183,76 +159,76 @@
 <!-- =========================
     FAQ SECTION
 ============================== -->
-<section id="faq" class="parallax-section">
-    <div class="container">
-        <div class="row">
+<!--<section id="faq" class="parallax-section">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
 
-            <!-- Section title
-            ================================================== -->
-            <div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">
-                <div class="section-title">
-                    <h2>Do you have Questions?</h2>
-                    <p>아래에서 정보를 확인해보세요.</p>
-                </div>
-            </div>
+<!--            &lt;!&ndash; Section title-->
+<!--            ================================================== &ndash;&gt;-->
+<!--            <div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">-->
+<!--                <div class="section-title">-->
+<!--                    <h2>Do you have Questions?</h2>-->
+<!--                    <p>아래에서 정보를 확인해보세요.</p>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<!--            <div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">-->
+<!--                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    MOVIS는 어떤 서비스인가요?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <p>모비스는 언제 어디서든 알고 싶은 자동차의 정보를 알려주는 서비스 입니다.</p>
-                                <p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="panel panel-default">-->
+<!--                        <div class="panel-heading" role="tab" id="headingOne">-->
+<!--                            <h4 class="panel-title">-->
+<!--                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">-->
+<!--                                    MOVIS는 어떤 서비스인가요?-->
+<!--                                </a>-->
+<!--                            </h4>-->
+<!--                        </div>-->
+<!--                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
+<!--                            <div class="panel-body">-->
+<!--                                <p>모비스는 언제 어디서든 알고 싶은 자동차의 정보를 알려주는 서비스 입니다.</p>-->
+<!--                                <p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    What are latest UX Developments?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">
-                                <p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>
-                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="panel panel-default">-->
+<!--                        <div class="panel-heading" role="tab" id="headingTwo">-->
+<!--                            <h4 class="panel-title">-->
+<!--                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                                    What are latest UX Developments?-->
+<!--                                </a>-->
+<!--                            </h4>-->
+<!--                        </div>-->
+<!--                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">-->
+<!--                            <div class="panel-body">-->
+<!--                                <p>Nunc eu nibh vel augue mollis tincidunt id efficitur tortor. Sed pulvinar est sit amet tellus iaculis hendrerit. Mauris justo erat, rhoncus in arcu at, scelerisque tempor erat.</p>-->
+<!--                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What things about Social Media will be discussed?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">
-                                <p>Aenean vulputate finibus justo et feugiat. Ut turpis lacus, dapibus quis justo id, porttitor tempor justo. Quisque ut libero sapien. Integer tellus nisl, efficitur sed dolor at, vehicula finibus massa.</p>
-                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="panel panel-default">-->
+<!--                        <div class="panel-heading" role="tab" id="headingThree">-->
+<!--                            <h4 class="panel-title">-->
+<!--                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                                    What things about Social Media will be discussed?-->
+<!--                                </a>-->
+<!--                            </h4>-->
+<!--                        </div>-->
+<!--                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+<!--                            <div class="panel-body">-->
+<!--                                <p>Aenean vulputate finibus justo et feugiat. Ut turpis lacus, dapibus quis justo id, porttitor tempor justo. Quisque ut libero sapien. Integer tellus nisl, efficitur sed dolor at, vehicula finibus massa.</p>-->
+<!--                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur dolor libero sodales vitae elit massa. Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                </div>
-            </div>
+<!--                </div>-->
+<!--            </div>-->
 
-        </div>
-    </div>
-</section>
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <!-- =========================
     FOOTER SECTION

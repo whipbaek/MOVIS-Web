@@ -27,6 +27,7 @@ public class SpringUploadController implements WebMvcConfigurer {
 
     @GetMapping
     public String movisMain() {
+        temp = 0;
         return "movisMain";
     }
 

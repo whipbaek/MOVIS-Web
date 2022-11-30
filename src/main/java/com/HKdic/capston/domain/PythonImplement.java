@@ -14,6 +14,7 @@ public class PythonImplement {
 
     public static String nameOfCar = "";
     public static ArrayList<String> nameOfCars = new ArrayList<>();
+    public static ArrayList<String> carInfoText = new ArrayList<>();
 
     public Process makeProcess(String command, String pythonFile, String arg1) throws IOException {
         return (new ProcessBuilder(command, pythonFile, arg1)).start();
@@ -88,6 +89,15 @@ public class PythonImplement {
         System.out.println("infos = " + infos);
 
         if(exitVal != 0) return; //비정상 종료
+    }
+
+    /**
+     * tts
+     */
+
+    public void implementTTS() throws Exception {
+        Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), carInfoText.get(0), carInfoText.get(1), carInfoText.get(2), PYTHON_TTS_VOICE_DIR.getVal());
+
     }
 
 }

@@ -26,7 +26,7 @@ public enum DIR {
 //    LOCAL_RESOURCE_LOCATION("file:///C:/Users/jibae/Projects/MOVIS-Web/images/"),
 //    PYTHON_DIR("C:\\Users\\jibae\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
 //    PYTHON_ML_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
-//    PYTHON_CRAWLING_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCar_DG.py"),
+//    PYTHON_CRAWLING_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\rawlingCarTh.py"),
 //    UPLOADED_IMG_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\testFile.jpg"),
 //    FILE_SAVE_DIR("/C:/Users/jibae/Projects/MOVIS-Web/images/"),
 //    CAR_IMAGE_DIR("C:/Users/jibae/Projects/MOVIS-Web/images/car.png"),
@@ -41,7 +41,9 @@ public enum DIR {
     UPLOADED_IMG_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\testFile.jpg"),
     FILE_SAVE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/images/"),
     CAR_IMAGE_DIR("C:/Users/whipbaek/Projects/MOVIS-Web/images/car.png"),
-    PYTHON_IMAGE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\");
+    PYTHON_IMAGE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\"),
+    PYTHON_TTS_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\tts.py"),
+    PYTHON_TTS_VOICE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\audio");
 
     private final String val;
 

@@ -507,7 +507,7 @@ footer {
     Intro section              
 -----------------------------------------*/
 #intro {
-    background: url('../initialimage/MainCar-image_copy.jpg') 50% 0 repeat-y fixed;
+    background: url('../initialimage/MainCar-image_copy_before.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;

@@ -46,21 +46,25 @@
      NAVIGATION LINKS
 ============================== -->
 
-<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
-    <div class="container">
+<!--<div class="navbar navbar-fixed-top custom-navbar" role="navigation">-->
+<!--    <div class="container">-->
 
         <!-- navbar header -->
-        <div class="navbar-header">
+<!--        <div class="navbar-header">-->
 <!--            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
 <!--                <span class="icon icon-bar"></span>-->
 <!--                <span class="icon icon-bar"></span>-->
 <!--                <span class="icon icon-bar"></span>-->
 <!--            </button>-->
-            <a th:href="@{/movis}" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.7">MOVIS</a>
-        </div>
-
-    </div>
+<div style="text-align: center">
+    <br><br>
+            <h1><a th:href="@{/movis}" style="text-shadow: 2px 1px 1px black; opacity: 0.7; color: #0a0b12">MOVIS</a></h1>
+<hr>
 </div>
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</div>-->
 
 
 <!-- =========================
@@ -71,34 +75,34 @@
         <div class="row align-items-center justify-content-between">
             <div class="order-last order-lg-1 col-lg-5">
                 <h1 class="mb-4 display-5" data-aos="fade-right"><td th:text="${carInfo.name}"></td></h1><br>
-                <p class="mb-5" data-aos="fade-up">
+                <p class="mb-5" data-aos="fade-up" data-aos-delay="0.2">
                     찾으신 차량의 정보는 아래와 같습니다.
                 </p>
                 <div class="row">
                     <div class="col-sm-6">
                         <ul class="list-unstyled d-flex flex-column mb-0">
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="150">
                                 <img th:src="@{/images/svg/check.svg}">
                                 <i class="fs-5 me-2 lh-1 align-middle"></i>
                                 <h3 class="flex-grow-1">
                                     <td th:text="${carInfo.price}"></td>
                                 </h3>
                             </li>
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="300">
                                 <img th:src="@{/images/svg/check.svg}">
                                 <i class="fs-5 me-2 lh-1 align-middle"></i>
                                 <h3 class="flex-grow-1">
                                     <td th:text="${carInfo.trim}"></td>
                                 </h3>
                             </li>
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="450">
                                 <img th:src="@{/images/svg/check.svg}">
                                 <i class="fs-5 me-2 lh-1 align-middle"></i>
                                 <h3 class="flex-grow-1">
                                     <td th:text="${carInfo.fuel}"></td>
                                 </h3>
                             </li>
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="600">
                                 <img th:src="@{/images/svg/check.svg}">
                                 <i class="fs-5 me-2 lh-1 align-middle"></i>
                                 <h3 class="flex-grow-1">
@@ -109,14 +113,14 @@
                     </div>
                     <div class="col-sm-6">
                         <ul class="list-unstyled d-flex flex-column mb-0">
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="750">
                                 <img th:src="@{/images/svg/check.svg}">
                                 <i class="fs-5 me-2 lh-1 align-middle"></i>
                                 <h3 class="flex-grow-1">
                                     <td th:text="${carInfo.mileage}"></td>
                                 </h3>
                             </li>
-                            <li class="mb-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="900">
                                 <img th:src="@{/images/svg/check.svg}">
                                 <i class="fs-5 me-2 lh-1 align-middle"></i>
                                 <h3 class="flex-grow-1">

@@ -63,6 +63,16 @@
 <!-- =========================
     OVERVIEW SECTION   
 ============================== -->
+<script>
+	let vh = 0;
+	function setScreenSize() {
+		let vh = window.innerHeight * 0.01;
+
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	}
+	setScreenSize();
+</script>
+
 <section id="overview">
 	<div class="container py-7 py-lg-12">
 <div class="row">
@@ -72,10 +82,13 @@
 		<div class="col-md-6 col-lg-4 mb-4">
 			<div class="card-hover">
 				<form name="uploadForm" th:action method="post">
-					<button class="box box1" onclick="formUpload()" style="border: none; outline: none">
+					<button class="box box1" onclick="formUpload()" style="border: none; border-radius: 5%; outline: none">
 						<input name="index" type="text" value="0" style="display: none">
 						<h1>sm3 2017 </h1>
-						<h2>일치율 : 88%</h2>
+						<h3><span>일치율 : </span>
+							<span data-countup='{"startVal": 0, "decimalPlaces": 2}'
+							  data-to="88" data-aos="" data-aos-id="countup:in"></span><span class="">%</span>
+						</h3>
 					</button>
 				</form>
 				<h5 class="mb-1" style="padding-bottom: 10px; padding-top: -5px" >no.1</h5>
@@ -85,10 +98,13 @@
 		<div class="col-md-6 col-lg-4 mb-4" >
 			<div class="card-hover">
 				<form name="uploadForm" th:action method="post">
-					<button class="box box2" onclick="formUpload()" style="border: none; outline: none">
+					<button class="box box2" onclick="formUpload()" style="border: none; border-radius: 5%; outline: none">
 						<input name="index" type="text" value="1" style="display: none">
 						<h1>BMW 5시리즈 2020 </h1>
-						<h2>일치율 : 15%</h2>
+						<h3><span>일치율 : </span>
+							<span data-countup='{"startVal": 0, "decimalPlaces": 2}'
+								  data-to="15" data-aos="" data-aos-id="countup:in"></span><span class="">%</span>
+						</h3>
 					</button>
 				</form>
 				<h5 class="mb-1">no.2</h5>
@@ -98,10 +114,13 @@
 		<div class="col-md-6 col-lg-4 mb-4">
 			<div class="card-hover">
 				<form name="uploadForm" th:action method="post">
-					<button class="box box3" onclick="formUpload()" style="border: none; outline: none">
+					<button class="box box3" onclick="formUpload()" style="border: none; border-radius: 5%; outline: none">
 						<input name="index"type="text" value="2" style="display: none">
 						<h1>현대 아반떼 2019 </h1>
-						<h2>일치율 :7%</h2>
+						<h3><span>일치율 : </span>
+							<span data-countup='{"startVal": 0, "decimalPlaces": 2}'
+								  data-to="7" data-aos="" data-aos-id="countup:in"></span><span class="">%</span>
+						</h3>
 					</button>
 				</form>
 				<h5 class="mb-1">no.3</h5>
@@ -229,7 +248,7 @@
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 <script type="text/javascript" th:src="@{/js/loadingoverlay.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/myjs.js}"></script>
-
+<script type="text/javascript" th:src="@{/js/theme.bundle.js}"></script>
 
 </body>
 </html>

@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 from selenium.webdriver.support import expected_conditions as EC
 import os
-
+import sys
 
 def click_infinity(driver, selector):
     while True:
@@ -20,6 +20,7 @@ def click_infinity(driver, selector):
 
 ID = 'tyt0815@naver.com'
 PWD = 'rudqnreowhdvm2'
+#model_nam
 model_name = '자동차5'  # 자동차 모델명
 txt = '5이'   # 내용(자동차 설명 등)
 # 현재경로의 tts_mp3폴더에 저장(맥이랑 윈도우랑 경로적는 양식이 다를수도...?)
@@ -36,10 +37,16 @@ options.add_experimental_option("prefs", {      # 다운로드 경로 설정
     "safebrowsing.enabled": True
 })
 options.add_argument('--headless')  # BackGround 작업
-# driver = webdriver.Chrome(service=Service(
-#     ChromeDriverManager().install()), options=options)  # driver 자동 Download
-driver = webdriver.Chrome(
-    "/opt/homebrew/bin/chromedriver", options=options)    # 로컬 driver
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)  # driver 자동 Download
+options = webdriver.ChromeOptions()
+options.add_argument('--headless') # BackGround 작업
+options.add_argument("disable-gpu")
+options.add_argument("disable-infobars")
+options.add_argument("--disable-extensions")
+prefs = {'profile.default_content_setting_values': {'cookies' : 2, 'images': 2, 'plugins' : 2, 'popups': 2, 'geolocation': 2, 'notifications' : 2, 'auto_select_certificate': 2, 'fullscreen' : 2, 'mouselock' : 2, 'mixed_script': 2, 'media_stream' : 2, 'media_stream_mic' : 2, 'media_stream_camera': 2, 'protocol_handlers' : 2, 'ppapi_broker' : 2, 'automatic_downloads': 2, 'midi_sysex' : 2, 'push_messaging' : 2, 'ssl_cert_decisions': 2, 'metro_switch_to_desktop' : 2, 'protected_media_identifier': 2, 'app_banner': 2, 'site_engagement' : 2, 'durable_storage' : 2}}
+options.add_experimental_option('prefs', prefs)
+caps = DesiredCapabilities().CHROME
+caps["pageLoadStrategy"] = "none"
 
 driver.implicitly_wait(10)
 driver.get('https://app.typecast.ai/ko/editor/636b2513b58379d5c6b6b437')

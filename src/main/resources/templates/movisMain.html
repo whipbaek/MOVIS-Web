@@ -15,6 +15,7 @@
 <link th:href="@{/css/owl.theme.css}" rel="stylesheet">
 <link th:href="@{/css/owl.carousel.css}" rel="stylesheet">
 <link th:href="@{/css/icons.css}" rel="stylesheet"/>
+<link th:href="@{/css/buttons.css}" rel="stylesheet"/>
 
 <!-- Main css -->
 <link th:href="@{/css/style.css}" rel="stylesheet">
@@ -52,7 +53,7 @@
 <!--				<span class="icon icon-bar"></span>-->
 <!--				<span class="icon icon-bar"></span>-->
 			</button>
-			<a th:href="@{/movis}" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.7">MOVIS</a>
+			<h1><a th:href="@{/movis}" class="navbar-brand" style="text-shadow: 2px 1px 1px black; opacity: 0.6">MOVIS</a></h1>
 		</div>
 	</div>
 </div>
@@ -70,7 +71,7 @@
 
 				<form id="uploadForm" name="uploadForm" th:action method="post" enctype="multipart/form-data">
 					<input id="uploadInput" type="file" name="file" onchange="imageUpload()" style="display: none">
-					<a id="uploadBtn" onclick="onClickUploadMain();" class="btn btn-dark btn-lg smoothScroll wow fadeInUp" data-wow-delay="0.5s" style="font-size: 25px; border-radius: 10%"> ADD Image &#128659; </a>
+					<a id="uploadBtn" onclick="onClickUploadMain();" class="btn btn-dark btn-lg btn-radius smoothScroll wow fadeInUp" data-wow-delay="0.5s" style="font-size: 25px; border-radius: 10%"> ADD Image &#128659; </a>
 				</form>
 
 				<div class="dropBox" th:name="file">
@@ -89,7 +90,7 @@
 						e.preventDefault();
 						console.log('dragover');
 
-						dropBox.style.backgroundColor = 'green';
+						dropBox.style.backgroundColor = 'grey';
 					}); /* 박스 안에 Drag를 하고 있을 때 */
 					dropBox.addEventListener('dragleave', function(e) {
 						console.log('dragleave');

@@ -1,12 +1,11 @@
 package com.HKdic.capston.controller;
 import static com.HKdic.capston.domain.DIR.*;
-import static com.HKdic.capston.domain.PythonImplement.nameOfCar;
 import static com.HKdic.capston.domain.PythonImplement.nameOfCars;
+import static com.HKdic.capston.domain.PythonImplement.percentages;
 
 import com.HKdic.capston.domain.CarInformation;
 import com.HKdic.capston.domain.PythonImplement;
 import lombok.extern.slf4j.Slf4j;
-import org.python.antlr.op.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
 @RequestMapping("/movis")
 public class SpringUploadController implements WebMvcConfigurer {
 
-    private PythonImplement pythonImplement = new PythonImplement();
+    private final PythonImplement pythonImplement = new PythonImplement();
     private int temp = 0;
     public static ArrayList<CarInformation> carInformations = new ArrayList<>();
 
@@ -42,12 +41,14 @@ public class SpringUploadController implements WebMvcConfigurer {
             file.transferTo(new File(fullPath));
         }
         pythonImplement.implementML();
-        for (String carName : nameOfCars) {
-            System.out.println("carName = " + carName);
-        }
-        System.out.println("크롤링 시작");
+
+        log.info("");
+        log.info("크롤링 시작");
+        log.info("");
         pythonImplement.implementCrawling();
-        System.out.println("크롤링 끝");
+
+        log.info("크롤링 끝");
+
         temp = 1;
         return "redirect:/movis/redir";
     }
@@ -58,19 +59,9 @@ public class SpringUploadController implements WebMvcConfigurer {
 
         model.addAttribute("carInfos", carInformations);
         model.addAttribute("filepath", CAR_IMAGE_DIR.getVal());
+        model.addAttribute("percentages", percentages);
 
         return "movisSelect";
-    }
-
-    @GetMapping("/select")
-    public String selectPage() {
-        return "movisSelect";
-    }
-
-    @PostMapping("/select")
-    public String testMapping2(@RequestParam("index") String index, Model model) {
-        model.addAttribute("index", index);
-        return "selectResultTest";
     }
 
     @PostMapping("/redir")
@@ -88,7 +79,6 @@ public class SpringUploadController implements WebMvcConfigurer {
             firstIndex = 0;
             secondIndex = 1;
         }
-
 
         model.addAttribute("carInfo", carInformations.get(index));
         model.addAttribute("carInfos", carInformations);

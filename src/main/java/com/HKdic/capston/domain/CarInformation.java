@@ -12,16 +12,6 @@ public class CarInformation {
     private String mileage; // 연비
     private String limit; // 정원
 
-    public CarInformation(String name, String price, String trim, String fuel, String displacement, String mileage, String limit) {
-        this.name = name;
-        this.price = price;
-        this.trim = trim;
-        this.fuel = fuel;
-        this.displacement = displacement;
-        this.mileage = mileage;
-        this.limit = limit;
-    }
-
     public CarInformation(ArrayList<String> infos){
         this.name = infos.get(0);
         this.price = infos.get(1);
@@ -31,8 +21,6 @@ public class CarInformation {
         this.mileage = infos.get(5);
         this.limit = infos.get(6);
     }
-
-    public CarInformation() {}
 
     public String getName() {
         return name;

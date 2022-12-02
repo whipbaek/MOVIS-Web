@@ -1,5 +1,7 @@
 package com.HKdic.capston.domain;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,11 +12,12 @@ import static com.HKdic.capston.domain.DIR.*;
 
 /* Class For Implement Python File */
 
+@Slf4j
 public class PythonImplement {
 
-    public static String nameOfCar = "";
     public static ArrayList<String> nameOfCars = new ArrayList<>();
     public static ArrayList<String> carInfoText = new ArrayList<>();
+    public static ArrayList<String> percentages = new ArrayList<>();
 
     public Process makeProcess(String command, String pythonFile, String arg1) throws IOException {
         return (new ProcessBuilder(command, pythonFile, arg1)).start();
@@ -42,15 +45,19 @@ public class PythonImplement {
 
         String result;
         int i=0;
+        int count = 1;
         while((result=br.readLine()) != null){
-            System.out.println("result = " + result);
-            nameOfCars.add(result);
-            if(i==3) break;
+            if(i%2 == 0) {
+                log.info("{}번째 자동차 : {}", count, result);
+                nameOfCars.add(result);
+            }
+            else {
+                log.info("{}번째 자동차 일치율 : {}", count++, result);
+                percentages.add(result);
+            }
+            if(i==6) break;
             i++;
         }
-
-        System.out.println("끝남.");
-
     }
 
     /**
@@ -75,19 +82,22 @@ public class PythonImplement {
         String result;
         ArrayList<String> infos = new ArrayList<>();
         int i=0;
+        int count = 1;
         while((result=br.readLine()) != null){
-            System.out.println("result = " + result);
+            if(i==0){
+                log.info("{}번째 차의 정보", count);
+                count+=1;
+            }
+            log.info("{}", result);
             infos.add(result);
             i++;
             if(i==7){
                 i = 0;
                 carInformations.add(new CarInformation(infos));
                 infos.clear();
+                log.info("");
             }
         }
-
-        System.out.println("infos = " + infos);
-
         if(exitVal != 0) return; //비정상 종료
     }
 

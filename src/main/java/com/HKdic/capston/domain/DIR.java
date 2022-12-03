@@ -30,7 +30,9 @@ public enum DIR {
 //    UPLOADED_IMG_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\testFile.jpg"),
 //    FILE_SAVE_DIR("/C:/Users/jibae/Projects/MOVIS-Web/images/"),
 //    CAR_IMAGE_DIR("C:/Users/jibae/Projects/MOVIS-Web/images/car.png"),
-//    PYTHON_IMAGE_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\");
+//    PYTHON_IMAGE_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\")
+//    PYTHON_TTS_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\tts.py"),
+//    PYTHON_TTS_VOICE_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\audio");
 
 //    // Desktop Side
     RESOURCE_HANDLER("/images/**"),

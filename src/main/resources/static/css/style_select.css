@@ -1,3 +1,6 @@
+:root {
+    --vh: 100%;
+}
 
 #loading {
     width: 100%;
@@ -321,7 +324,7 @@ footer {
 }
 
 #overview{
-    background: url('../initialimage/MainCar-image_copy.jpg') repeat-y;
+    background: url('../initialimage/MainCar-image_copy.jpg');
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;

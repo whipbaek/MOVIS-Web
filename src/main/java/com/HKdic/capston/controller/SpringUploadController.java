@@ -36,7 +36,7 @@ public class SpringUploadController implements WebMvcConfigurer {
         temp = 0;
         // Save File
         if (!file.isEmpty()) {
-            String fullPath = FILE_SAVE_DIR.getVal() + "testFile.jpg";
+            String fullPath = FILE_SAVE_DIR.getVal() + "uploadFile.jpg";
             log.info("파일 저장 fullPath={}", fullPath);
             file.transferTo(new File(fullPath));
         }
@@ -58,7 +58,6 @@ public class SpringUploadController implements WebMvcConfigurer {
         while(temp != 1){}
 
         model.addAttribute("carInfos", carInformations);
-        model.addAttribute("filepath", CAR_IMAGE_DIR.getVal());
         model.addAttribute("percentages", percentages);
 
         return "movisSelect";

@@ -27,9 +27,8 @@ public enum DIR {
 //    PYTHON_DIR("C:\\Users\\jibae\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
 //    PYTHON_ML_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
 //    PYTHON_CRAWLING_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\rawlingCarTh.py"),
-//    UPLOADED_IMG_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\testFile.jpg"),
+//    UPLOADED_IMG_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\uploadFile.jpg"),
 //    FILE_SAVE_DIR("/C:/Users/jibae/Projects/MOVIS-Web/images/"),
-//    CAR_IMAGE_DIR("C:/Users/jibae/Projects/MOVIS-Web/images/car.png"),
 //    PYTHON_IMAGE_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\images\\")
 //    PYTHON_TTS_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\tts.py"),
 //    PYTHON_TTS_VOICE_DIR("C:\\Users\\jibae\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\audio");
@@ -40,9 +39,8 @@ public enum DIR {
     PYTHON_DIR("C:\\Users\\whipbaek\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"),
     PYTHON_ML_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\ML.py"),
     PYTHON_CRAWLING_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\CrawlingCarTh.py"),
-    UPLOADED_IMG_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\testFile.jpg"),
+    UPLOADED_IMG_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\uploadFile.jpg"),
     FILE_SAVE_DIR("/C:/Users/whipbaek/Projects/MOVIS-Web/images/"),
-    CAR_IMAGE_DIR("C:/Users/whipbaek/Projects/MOVIS-Web/images/car.png"),
     PYTHON_IMAGE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\images\\"),
     PYTHON_TTS_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\java\\com\\HKdic\\capston\\pythonfile\\tts.py"),
     PYTHON_TTS_VOICE_DIR("C:\\Users\\whipbaek\\Projects\\MOVIS-Web\\src\\main\\resources\\static\\audio");

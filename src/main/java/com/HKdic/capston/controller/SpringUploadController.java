@@ -49,6 +49,11 @@ public class SpringUploadController implements WebMvcConfigurer {
 
         log.info("크롤링 끝");
 
+        log.info("");
+        log.info("tts 제작 시작");
+        pythonImplement.implementTTS();
+        log.info("tts 제작 끝");
+
         temp = 1;
         return "redirect:/movis/redir";
     }

@@ -66,4 +66,38 @@ public class CarInformation {
         return "\n" + name + "\n" + price + "\n" + trim + "\n" + fuel + "\n" + displacement + "\n" + mileage + "\n" + limit + "\n";
     }
 
+    public String makeTTS() {
+        String intro = "찾으신 정보는 다음과 같습니다 ";
+        return intro +", " + name + ", " + splitPrice() + ", " + trim + ", " + fuel + ", "  + splitDisplacement() + ", " + splitMileage()+ ", " + limit;
+    }
+
+    private String splitPrice() {
+        String[] splits = price.split("~");
+        return splits[0] + "만원부터 " + splits[1];
+    }
+
+    private String splitDisplacement() {
+        String[] splits = displacement.split("~");
+        for (int i = 0; i < splits[1].length(); i++) {
+            if(splits[1].charAt(i) == 'c'){
+                splits[1] = splits[1].substring(0, i) + "씨씨";
+                break;
+            }
+        }
+
+        return splits[0] + "에서 " + splits[1];
+    }
+
+    private String splitMileage() {
+        String[] splits = mileage.split("~");
+        for (int i = 0; i < splits[1].length(); i++) {
+            if(splits[1].charAt(i) == 'k'){
+                splits[1] = splits[1].substring(0, i) + "킬로미터퍼리터";
+                break;
+            }
+        }
+
+        return splits[0] + "에서" + splits[1];
+    }
+
 }

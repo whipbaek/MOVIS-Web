@@ -106,8 +106,21 @@ public class PythonImplement {
      */
 
     public void implementTTS() throws Exception {
-        Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_CRAWLING_DIR.getVal(), carInfoText.get(0), carInfoText.get(1), carInfoText.get(2), PYTHON_TTS_VOICE_DIR.getVal());
+        Process process = makeProcess(PYTHON_DIR.getVal(), PYTHON_TTS_DIR.getVal(), carInformations.get(0).makeTTS(),
+                carInformations.get(1).makeTTS(), carInformations.get(2).makeTTS(), PYTHON_TTS_VOICE_DIR.getVal());
+        getTTS(process);
 
     }
 
+    public void getTTS(Process process) throws Exception{
+        int exitVal = process.waitFor();
+        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
+
+        String result;
+        while((result=br.readLine()) != null){
+            }
+        }
+
 }
+
+

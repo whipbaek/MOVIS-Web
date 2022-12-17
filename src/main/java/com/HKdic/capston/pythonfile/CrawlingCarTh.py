@@ -1,4 +1,4 @@
-import time
+#import time
 import sys
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
@@ -31,11 +31,13 @@ def multi_crawling(keyword, path, rank, carlist):
     options.add_argument("disable-gpu")
     options.add_argument("disable-infobars")
     options.add_argument("--disable-extensions")
+    options.add_argument('--no-sandbox')
+    options.add_argument("--single-process")
+    options.add_argument("--disable-dev-shm-usage")
     prefs = {'profile.default_content_setting_values': {'cookies' : 2, 'images': 2, 'plugins' : 2, 'popups': 2, 'geolocation': 2, 'notifications' : 2, 'auto_select_certificate': 2, 'fullscreen' : 2, 'mouselock' : 2, 'mixed_script': 2, 'media_stream' : 2, 'media_stream_mic' : 2, 'media_stream_camera': 2, 'protocol_handlers' : 2, 'ppapi_broker' : 2, 'automatic_downloads': 2, 'midi_sysex' : 2, 'push_messaging' : 2, 'ssl_cert_decisions': 2, 'metro_switch_to_desktop' : 2, 'protected_media_identifier': 2, 'app_banner': 2, 'site_engagement' : 2, 'durable_storage' : 2}}
     options.add_experimental_option('prefs', prefs)
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)  # driver 자동 Download
-    # driver = webdriver.Chrome(
-    #     "/opt/homebrew/bin/chromedriver", options=options)    # 로컬 driver
+    #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)  # driver 자동 Download
+    driver = webdriver.Chrome("/home/hojun/chromedriver", options=options)    # 로컬 driver
     # options.add_argument('--window-size=1800,800') # Window Size
     #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
@@ -45,8 +47,6 @@ def multi_crawling(keyword, path, rank, carlist):
     driver.maximize_window()
 
     daum = '다음 자동차 '
-    # keyword = sys.argv[1]
-    # keyword = "sm3 2017"
 
     driver.find_element(
         By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(daum + keyword)
@@ -58,16 +58,11 @@ def multi_crawling(keyword, path, rank, carlist):
 
     element = driver.find_element(By.CLASS_NAME, 'box_model')
     element_png = element.screenshot_as_png
-    # with open(path+'car'+str(rank)+'.png', "wb") as file:
-    #     file.write(element_png)  # -----동근
-    # with open("./car.png", "wb") as file:
-    #     file.write(element_png)
 
     # -----동근
     # 모델명, 연식
     title_model = driver.find_element(By.CLASS_NAME, "tit_model").text
     year = driver.find_element(By.CLASS_NAME, "link_selected").text
-
     # 이미지 저장 (car_img.jpg)
     image = driver.find_element(
         By.CSS_SELECTOR, "#mArticle > div.section_photoview > div > div > div.photo_body > div > a.link_thumb.image_view.\#thumbnail > img")
@@ -92,23 +87,17 @@ def multi_crawling(keyword, path, rank, carlist):
                    fuel, displacement, efficiency, capacity, rank)
     carlist.append(car)
 
-    # print(car.name+car.year,',',car.price,',',car.exterior,',',car.fuel,',',car.displacement,',',car.efficiency,',',car.capacity);
-
     driver.close()
     return
 
 
+
 if __name__ == "__main__":
 
-    # key1, key2, key3 = 'sm3 2017','BMW 5시리즈 2020','현대 아반떼 2019'
-    # path = "C:\\Users\\whipbaek\\Projects\\crawlingTest\\"
     key1, key2, key3 = sys.argv[1], sys.argv[2], sys.argv[3]
     path = sys.argv[4]
-    # key1 = 'k3 2018'
-    # path = './'
     carlist = []
-
-    start = time.time()
+    # start = time.time()
 
     th1 = Thread(target=multi_crawling, args=(key1, path, 0, carlist))
     th2 = Thread(target=multi_crawling, args=(key2, path, 1, carlist))
@@ -132,5 +121,5 @@ if __name__ == "__main__":
         print("연비: "+car.efficiency)
         print("정원: "+car.capacity+"명")
 
-    end = time.time()
+    # end = time.time()
     # print(f"{end - start:.5f} sec")

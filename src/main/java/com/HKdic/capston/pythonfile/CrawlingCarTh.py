@@ -26,6 +26,7 @@ class car_info():
 
 
 def multi_crawling(keyword, path, rank, carlist):
+    user_agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Whale/3.18.154.5 Safari/537.36'
     options = webdriver.ChromeOptions()
     options.add_argument('--headless') # BackGround 작업
     options.add_argument("disable-gpu")
@@ -34,10 +35,11 @@ def multi_crawling(keyword, path, rank, carlist):
     options.add_argument('--no-sandbox')
     options.add_argument("--single-process")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument('user_agent='+user_agent)
     prefs = {'profile.default_content_setting_values': {'cookies' : 2, 'images': 2, 'plugins' : 2, 'popups': 2, 'geolocation': 2, 'notifications' : 2, 'auto_select_certificate': 2, 'fullscreen' : 2, 'mouselock' : 2, 'mixed_script': 2, 'media_stream' : 2, 'media_stream_mic' : 2, 'media_stream_camera': 2, 'protocol_handlers' : 2, 'ppapi_broker' : 2, 'automatic_downloads': 2, 'midi_sysex' : 2, 'push_messaging' : 2, 'ssl_cert_decisions': 2, 'metro_switch_to_desktop' : 2, 'protected_media_identifier': 2, 'app_banner': 2, 'site_engagement' : 2, 'durable_storage' : 2}}
     options.add_experimental_option('prefs', prefs)
-    #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)  # driver 자동 Download
-    driver = webdriver.Chrome("/home/hojun/chromedriver", options=options)    # 로컬 driver
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)  # driver 자동 Download
+    #driver = webdriver.Chrome("/home/hojun/chromedriver", options=options)    # 로컬 driver
     # options.add_argument('--window-size=1800,800') # Window Size
     #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
@@ -47,14 +49,14 @@ def multi_crawling(keyword, path, rank, carlist):
     driver.maximize_window()
 
     daum = '다음 자동차 '
-
     driver.find_element(
         By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(daum + keyword)
     driver.find_element(
         By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(Keys.RETURN)
-
+    #print(driver.page_source)
     driver.find_element(
         By.XPATH, '/html/body/div[7]/div/div[11]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/a').click()
+    #driver.find_element(By.CSS_SELECTOR, '#rso > div:nth-child(1) > div > div > div.Z26q7c.UK95Uc.jGGQ5e > div > a > h3').click()
 
     element = driver.find_element(By.CLASS_NAME, 'box_model')
     element_png = element.screenshot_as_png

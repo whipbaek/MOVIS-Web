@@ -1,35 +1,43 @@
 ## Capstone Design Project 2 : MOVIS (Mobility information Obtained by Very Intelligent System)  
 
-![1](https://github.com/hojunking/MOVIS/assets/84840627/7545c743-c896-4086-bce1-f9920b74dcfa)
-![2](https://github.com/hojunking/MOVIS/assets/84840627/ecdbe626-3525-4fdc-b3e9-20d3bd4dceb1)
-![3](https://github.com/hojunking/MOVIS/assets/84840627/1b356cce-6940-4f11-a932-b1ce805f0363)
-![4](https://github.com/hojunking/MOVIS/assets/84840627/b9b2c10f-b76f-4b8c-b1d5-b7aa17807091)
-- 추진방법
-  1. AI Hub에 공유된 공공 데이터인 자동차 외관 데이터 이용
-  2. 대표적인 Image classification Model인 VggNet을 이용한 업로드된 자동차 이미지를 카테고리, 키워드 별로 분류
-  3. 해당 이미지의 라벨링 된 키워드를 통해 웹크롤링으로 정보 제공
-  4. 사용자에게 해당 정보를 보여주고 음성으로 설명
-- 기대효과
-  1. 기존 차량명 확인 후 브라우저에서 검색하는 절차를 단 한번의 사진 촬영으로 해결해 간편함을 제공하는 효과
-  2. 향후 블랙박스나 차량에 탑재된 카메라를 통해서 운전자 시점의 앞 차량에 대한 정보를 음성으로 설명해주는 기능을 제공하는 본 서비스를 차량에 탑재하여 융합하는 가능성 기대
-  3. 자동차를 분류해서 +alpha 작업을 하는 시스템에 기반기술로 들어갈 수도 있음  
-![5](https://github.com/hojunking/MOVIS/assets/84840627/7525e94b-86ae-42b8-a07b-b95582ad3ee0)
-![6](https://github.com/hojunking/MOVIS/assets/84840627/e7c00848-9c17-432b-acbc-d29ebb2a3b9a)
-![7](https://github.com/hojunking/MOVIS/assets/84840627/c5a33774-3921-4590-99ca-1346f887ca53)
-![8](https://github.com/hojunking/MOVIS/assets/84840627/7188c0bc-ff60-40a6-ba41-182cfef160b0)
-![9](https://github.com/hojunking/MOVIS/assets/84840627/300f282a-a4c4-4edb-af64-8b110c192288)
-![10](https://github.com/hojunking/MOVIS/assets/84840627/ae7d3f06-a874-45c7-b701-9c3983da13b4)
-![11](https://github.com/hojunking/MOVIS/assets/84840627/8b3b7ac3-c6fa-4804-939e-f0735b2ea85b)
-![12](https://github.com/hojunking/MOVIS/assets/84840627/10ad11f1-00d0-47f6-9890-fe237608db3f)
-![13](https://github.com/hojunking/MOVIS/assets/84840627/1d5fa8d4-9811-4512-abe8-802635482cb5)
-![14](https://github.com/hojunking/MOVIS/assets/84840627/062ad7f9-1a01-454c-bea3-803803cc822c)
-![15](https://github.com/hojunking/MOVIS/assets/84840627/bfb8d9bd-5ec0-4101-befc-83cd13ba148f)
-![16](https://github.com/hojunking/MOVIS/assets/84840627/ae9c5cc4-283c-4bad-bde1-76cb1ab9d306)
-![17](https://github.com/hojunking/MOVIS/assets/84840627/3d5d77d5-522a-442e-974f-bca813edbe48)
-![18](https://github.com/hojunking/MOVIS/assets/84840627/1d537017-dc28-48f8-a538-0d6ceac08c19)
-![19](https://github.com/hojunking/MOVIS/assets/84840627/6616a932-c996-4ffc-b81b-600ee64fb887)
-![20](https://github.com/hojunking/MOVIS/assets/84840627/61853ecb-9406-4679-aca0-09ebac307e69)
-![22](https://github.com/hojunking/MOVIS/assets/84840627/bffe213d-e593-4f3f-b445-4814a48b479e)
-![23](https://github.com/hojunking/MOVIS/assets/84840627/c3876479-ada7-4824-b044-a6066226961d)
+![1](https://github.com/hojunking/MOVIS/assets/84840627/168b6747-3bc4-4e2b-b896-d2a953979dce)
+
+- Role Sharing
+  - Beak: Back-end & Server build
+  - Hojun Song: Deep learning based car category classifier training & evaluate
+  - Kim: Research classifier, Front-end & TTS
+
+![2](https://github.com/hojunking/MOVIS/assets/84840627/e9753ca5-0450-4dc8-9dc1-d7342bfe719d)
+![3](https://github.com/hojunking/MOVIS/assets/84840627/f6798acf-547a-4df0-acc8-1a62dca6f9c4)
+![4](https://github.com/hojunking/MOVIS/assets/84840627/7fc06248-55f5-4afc-a373-94f76aee3f1c)
+
+- Propulsion method
+  1. Using car appearance data, public data shared on AI Hub
+  2. Uploaded car images using VggNet, a representative image classification model, are classified by category and keyword
+  3. Provide information in web crawls through labeled keywords in that image
+  4. Show the information to the user and explain it in voice
+- Expected effect
+  1. It provides convenience by solving the procedure of searching in the browser after verifying the existing vehicle name with a single photo
+  2. In the future, it is expected that this service, which provides a function to explain information about the vehicle in front of the driver through a black box or a camera installed on the vehicle, will be installed in the vehicle and fused
+  3. It can also be used as a foundation technology in a system that classifies cars and does +alpha work  
+
+![5](https://github.com/hojunking/MOVIS/assets/84840627/02d54944-17f6-4795-bc49-2b745fda40ee)
+![6](https://github.com/hojunking/MOVIS/assets/84840627/28d9be1f-b90f-4754-92c1-47f78d7186d6)
+![7](https://github.com/hojunking/MOVIS/assets/84840627/3a21ebd3-7aca-46f1-bd00-74706627532d)
+![8](https://github.com/hojunking/MOVIS/assets/84840627/39a7eaa6-f940-466d-a3e6-0a60784197d4)
+![9](https://github.com/hojunking/MOVIS/assets/84840627/11e9b798-126d-4eba-b728-39cd37b128cf)
+![10](https://github.com/hojunking/MOVIS/assets/84840627/40dc8c82-07a8-458b-9353-cfa2f2aa21cf)
+![11](https://github.com/hojunking/MOVIS/assets/84840627/ca1d204f-d54c-42ba-b6b0-954a72b4376a)
+![12](https://github.com/hojunking/MOVIS/assets/84840627/12232d03-2555-49e2-b58e-5011ccaf18f7)
+![13](https://github.com/hojunking/MOVIS/assets/84840627/499f4b07-f7df-4d85-836f-9734822ab8fb)
+![14](https://github.com/hojunking/MOVIS/assets/84840627/0b9d59aa-981c-45fc-8503-c132b44acdd4)
+![15](https://github.com/hojunking/MOVIS/assets/84840627/e5dff80b-d4c6-410d-94b4-6ed986ebd813)
+![16](https://github.com/hojunking/MOVIS/assets/84840627/8f8dc5f0-b153-4a90-94ad-b2c3610daeac)
+![17](https://github.com/hojunking/MOVIS/assets/84840627/5901ec4b-8ad2-4b7b-8266-21e7b0f1cc3d)
+![18](https://github.com/hojunking/MOVIS/assets/84840627/0574c894-7369-4b65-9581-f43dc9ebe371)
+![19](https://github.com/hojunking/MOVIS/assets/84840627/ba80162d-76b0-4942-b4f2-2edf80cdaf65)
+![20](https://github.com/hojunking/MOVIS/assets/84840627/96cbe198-6e86-43f6-a2fc-a2600ce50b3d)
+![21](https://github.com/hojunking/MOVIS/assets/84840627/e7d8a7fe-47db-499e-a7b4-162e3ffac05f)
+![22](https://github.com/hojunking/MOVIS/assets/84840627/9e5983a8-925e-4441-a9a4-19ec45409f08)
 
 

@@ -1,13 +1,7 @@
 # import speech_recognition as sr
 from threading import Thread
 from gtts import gTTS
-import os
-import time
-import playsound
 import sys
-
-
-
 
 def saveTTS(voiceText, rank, path):
     tts = gTTS(text=voiceText, lang='ko')

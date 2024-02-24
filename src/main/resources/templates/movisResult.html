@@ -71,104 +71,104 @@
     OVERVIEW SECTION
 ============================== -->
 
-<audio autoplay controls th:if="${index == 0}" th:src="@{/images/audio/voice0.mp3}" type="audio/mp3" style="display: none">
+<audio id="audio0" th:if="${index == 0}" th:src="@{/images/audio/voice0.mp3}" type="audio/mp3" style="display: none">
 </audio>
-<audio autoplay controls th:if="${index == 1}" th:src="@{/images/audio/voice1.mp3}" type="audio/mp3" style="display: none">
+<audio id="audio1" th:if="${index == 1}" th:src="@{/images/audio/voice1.mp3}" type="audio/mp3" style="display: none">
 </audio>
-<audio autoplay controls th:if="${index == 2}" th:src="@{/images/audio/voice2.mp3}" type="audio/mp3" style="display: none">
+<audio id="audio2" th:if="${index == 2}" th:src="@{/images/audio/voice2.mp3}" type="audio/mp3" style="display: none">
 </audio>
 
 
 <section class="position-relative pb-lg-7 overflow-hidden">
-    <div class="container pb-7 pt-7 pt-lg-0 z-index-1">
-        <div class="row align-items-center justify-content-between">
-            <div class="order-last order-lg-1 col-lg-5">
-                <h1 class="mb-4 display-5" data-aos="fade-right"><td th:text="${carInfo.name}"></td></h1><br>
-                <p class="mb-5" data-aos="fade-up" data-aos-delay="0.2">
-                    찾으신 차량의 정보는 아래와 같습니다.
-                </p>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <ul class="list-unstyled d-flex flex-column mb-0">
-                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="150">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    <td th:text="${carInfo.price}"></td>
-                                </h3>
-                            </li>
-                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="300">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    <td th:text="${carInfo.trim}"></td>
-                                </h3>
-                            </li>
-                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="450">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    <td th:text="${carInfo.fuel}"></td>
-                                </h3>
-                            </li>
-                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="600">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    <td th:text="${carInfo.displacement}"></td>
-                                </h3>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6">
-                        <ul class="list-unstyled d-flex flex-column mb-0">
-                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="750">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    <td th:text="${carInfo.mileage}"></td>
-                                </h3>
-                            </li>
-                            <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="900">
-                                <img th:src="@{/images/svg/check.svg}">
-                                <i class="fs-5 me-2 lh-1 align-middle"></i>
-                                <h3 class="flex-grow-1">
-                                    <td th:text="${carInfo.limit}"></td>
-                                </h3>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <br>
-                <div class="d-grid gap-2" data-aos="fade-up" data-aos-delay="250">
-                    <form name ="uploadForm" th:action method="post">
-                    <button class="btn btn-primary btn-block" onclick="formUpload()" style="background-color: #8D72E1; border: 0; outline: 0;"><h5><img th:src="@{/images/svg/car-front-fill.svg}">
-                        <td th:text="${firstCarInfo.name}"></td><img th:src="@{/images/svg/arrow-right-short.svg}"></h5>
-                        <input name="index" type="text" th:value="${firstIndex}" style="display: none">
-                    </button>
-                    </form>
-                    <br>
+   <div class="container pb-7 pt-7 pt-lg-0 z-index-1">
+       <div class="row align-items-center justify-content-between">
+           <div class="order-last order-lg-1 col-lg-5">
+               <h1 class="mb-4 display-5" data-aos="fade-right"><td th:text="${carInfo.name}"></td></h1><br>
+               <p class="mb-5" data-aos="fade-up" data-aos-delay="0.2">
+                   찾으신 차량의 정보는 아래와 같습니다.
+               </p>
+               <div class="row">
+                   <div class="col-sm-6">
+                       <ul class="list-unstyled d-flex flex-column mb-0">
+                           <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="150">
+                               <img th:src="@{/images/svg/check.svg}">
+                               <i class="fs-5 me-2 lh-1 align-middle"></i>
+                               <h3 class="flex-grow-1">
+                                   <td th:text="${carInfo.price}"></td>
+                               </h3>
+                           </li>
+                           <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="300">
+                               <img th:src="@{/images/svg/check.svg}">
+                               <i class="fs-5 me-2 lh-1 align-middle"></i>
+                               <h3 class="flex-grow-1">
+                                   <td th:text="${carInfo.trim}"></td>
+                               </h3>
+                           </li>
+                           <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="450">
+                               <img th:src="@{/images/svg/check.svg}">
+                               <i class="fs-5 me-2 lh-1 align-middle"></i>
+                               <h3 class="flex-grow-1">
+                                   <td th:text="${carInfo.fuel}"></td>
+                               </h3>
+                           </li>
+                           <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="600">
+                               <img th:src="@{/images/svg/check.svg}">
+                               <i class="fs-5 me-2 lh-1 align-middle"></i>
+                               <h3 class="flex-grow-1">
+                                   <td th:text="${carInfo.displacement}"></td>
+                               </h3>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="col-sm-6">
+                       <ul class="list-unstyled d-flex flex-column mb-0">
+                           <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="750">
+                               <img th:src="@{/images/svg/check.svg}">
+                               <i class="fs-5 me-2 lh-1 align-middle"></i>
+                               <h3 class="flex-grow-1">
+                                   <td th:text="${carInfo.mileage}"></td>
+                               </h3>
+                           </li>
+                           <li class="mb-3 d-flex" data-aos="fade-right" data-aos-delay="900">
+                               <img th:src="@{/images/svg/check.svg}">
+                               <i class="fs-5 me-2 lh-1 align-middle"></i>
+                               <h3 class="flex-grow-1">
+                                   <td th:text="${carInfo.limit}"></td>
+                               </h3>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+               <br>
+               <div class="d-grid gap-2" data-aos="fade-up" data-aos-delay="250">
+                   <form name ="uploadForm" th:action method="post">
+                   <button class="btn btn-primary btn-block" onclick="formUpload()" style="background-color: #8D72E1; border: 0; outline: 0;"><h5><img th:src="@{/images/svg/car-front-fill.svg}">
+                       <td th:text="${firstCarInfo.name}"></td><img th:src="@{/images/svg/arrow-right-short.svg}"></h5>
+                       <input name="index" type="text" th:value="${firstIndex}" style="display: none">
+                   </button>
+                   </form>
+                   <br>
 
-                    <form name ="uploadForm" th:action method="post">
-                    <button class="btn btn-primary btn-block" onclick="formUpload()" style="background-color: #8D72E1; border: 0; outline: 0;"><h5><img th:src="@{/images/svg/car-front-fill.svg}">
-                        <td th:text="${secondCarInfo.name}"></td><img th:src="@{/images/svg/arrow-right-short.svg}"></h5>
-                        <input name="index" type="text" th:value="${secondIndex}" style="display: none; color: white" >
-                    </button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-10 ms-lg-auto order-1 order-lg-last mb-6 mb-lg-0">
-                <div class="position-relative" data-aos="fade-left"
-                     data-aos-delay="150">
-                    <img th:if="${index == 0}" th:src="@{/images/car_img0.jpg}" style="border-radius: 15%" class="img-responsive" alt="">
-                    <img th:if="${index == 1}" th:src="@{/images/car_img1.jpg}" style="border-radius: 15%" class="img-responsive" alt="">
-                    <img th:if="${index == 2}" th:src="@{/images/car_img2.jpg}" style="border-radius: 15%" class="img-responsive" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+                   <form name ="uploadForm" th:action method="post">
+                   <button class="btn btn-primary btn-block" onclick="formUpload()" style="background-color: #8D72E1; border: 0; outline: 0;"><h5><img th:src="@{/images/svg/car-front-fill.svg}">
+                       <td th:text="${secondCarInfo.name}"></td><img th:src="@{/images/svg/arrow-right-short.svg}"></h5>
+                       <input name="index" type="text" th:value="${secondIndex}" style="display: none; color: white" >
+                   </button>
+                   </form>
+               </div>
+           </div>
+           <div class="col-lg-6 col-md-10 ms-lg-auto order-1 order-lg-last mb-6 mb-lg-0">
+               <div class="position-relative" data-aos="fade-left"
+                    data-aos-delay="150">
+                   <img th:if="${index == 0}" th:src="@{/images/car_img0.jpg}"  onclick="playTTS(0)" style="border-radius: 15%" class="img-responsive" alt="">
+                   <img th:if="${index == 1}" th:src="@{/images/car_img1.jpg}" onclick="playTTS(1)" style="border-radius: 15%" class="img-responsive" alt="">
+                   <img th:if="${index == 2}" th:src="@{/images/car_img2.jpg}" onclick="playTTS(2)" style="border-radius: 15%" class="img-responsive" alt="">
+               </div>
+           </div>
+       </div>
+   </div>
 <!-- =========================
-    FAQ SECTION
+   FAQ SECTION
 ============================== -->
 <!--<section id="faq" class="parallax-section">-->
 <!--    <div class="container">-->
@@ -284,7 +284,7 @@
 <script type="text/javascript" th:src="@{/js/wow.min.js}"></script>
 <script type="text/javascript" th:src="@{/js/custom.js}"></script>
 <script type="text/javascript" th:src="@{/js/theme.bundle.js}"></script>
-
+<script type="text/javascript" th:src="@{/js/myjs.js}"></script>
 
 
 </body>

@@ -83,7 +83,7 @@
 				<form name="uploadForm" th:action method="post">
 					<button class="box box1" onclick="formUpload()" style="border: none; border-radius: 5%; outline: none">
 						<input name="index" type="text" value="0" style="display: none">
-						<h1>sm3 2017 </h1>
+						<h1><td th:text="${carInfos.get(0).name}"></td></h1>
 						<h3><span>일치율 : </span>
 							<span data-countup='{"startVal": 0, "decimalPlaces": 2}'
 							th:attr="data-to=${percentages.get(0)}" data-aos="" data-aos-id="countup:in"></span><span class="">%</span>
@@ -99,7 +99,7 @@
 				<form name="uploadForm" th:action method="post">
 					<button class="box box2" onclick="formUpload()" style="border: none; border-radius: 5%; outline: none">
 						<input name="index" type="text" value="1" style="display: none">
-						<h1>BMW 5시리즈 2020 </h1>
+						<h1><td th:text="${carInfos.get(1).name}"></td></h1>
 						<h3><span>일치율 : </span>
 							<span data-countup='{"startVal": 0, "decimalPlaces": 2}'
 								  th:attr="data-to=${percentages.get(1)}" data-aos="" data-aos-id="countup:in"></span><span class="">%</span>
@@ -115,7 +115,7 @@
 				<form name="uploadForm" th:action method="post">
 					<button class="box box3" onclick="formUpload()" style="border: none; border-radius: 5%; outline: none">
 						<input name="index"type="text" value="2" style="display: none">
-						<h1>현대 아반떼 2019 </h1>
+						<h1><td th:text="${carInfos.get(2).name}"></td></h1>
 						<h3><span>일치율 : </span>
 							<span data-countup='{"startVal": 0, "decimalPlaces": 2}'
 								  th:attr="data-to=${percentages.get(2)}" data-aos="" data-aos-id="countup:in"></span><span class="">%</span>

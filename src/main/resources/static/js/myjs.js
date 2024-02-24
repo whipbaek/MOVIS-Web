@@ -20,3 +20,8 @@ function onClickUploadMain(){
     let myInput = document.getElementById("uploadInput");
     myInput.click();
 }
+
+function playTTS(index){
+    var audio = document.getElementById(`audio${index}`);
+    audio.play();
+}

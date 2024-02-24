@@ -1,11 +1,11 @@
-## Capstone Design Project 2 : MOVIS (Mobility information Obtained by Very Intelligent System)  
-
+## Capstone Design Project 2 : MOVIS (Mobility information Obtained by Very Intelligent System) for 2nd semester of 2022
 ![1](https://github.com/hojunking/MOVIS/assets/84840627/168b6747-3bc4-4e2b-b896-d2a953979dce)
 
 - Role Sharing
   - Beak: Back-end & Server build
   - Hojun Song: Deep learning based car category classifier training & evaluate
   - Kim: Research classifier, Front-end & TTS
+- Notion Record: (https://truth-scallop-0eb.notion.site/MOVIS-Mobility-information-Obtained-by-Very-Intelligent-System-df39c2449d394a1e96eeac24b7662f7f?pvs=4)
 
 ![2](https://github.com/hojunking/MOVIS/assets/84840627/e9753ca5-0450-4dc8-9dc1-d7342bfe719d)
 ![3](https://github.com/hojunking/MOVIS/assets/84840627/f6798acf-547a-4df0-acc8-1a62dca6f9c4)

@@ -15,6 +15,10 @@ import static com.HKdic.capston.domain.DIR.*;
 @Slf4j
 public class PythonImplement {
 
+    public void init(){
+        nameOfCars.clear();
+        percentages.clear();
+    }
     public static ArrayList<String> nameOfCars = new ArrayList<>();
     public static ArrayList<String> carInfoText = new ArrayList<>();
     public static ArrayList<String> percentages = new ArrayList<>();
@@ -40,13 +44,17 @@ public class PythonImplement {
     }
 
     public void getCarName(Process process) throws Exception {
-        int exitVal = process.waitFor();
-        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
 
+
+        int exitVal = process.waitFor();
+        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "UTF-8"));
+        String tmp = br.readLine();
         String result;
         int i=0;
         int count = 1;
+
         while((result=br.readLine()) != null){
+
             if(i%2 == 0) {
                 log.info("{}번째 자동차 : {}", count, result);
                 nameOfCars.add(result);
@@ -77,13 +85,16 @@ public class PythonImplement {
 
     public void getCarInformation(Process process) throws Exception{
         int exitVal = process.waitFor();
-        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "euc-kr"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "UTF-8"));
 
         String result;
         ArrayList<String> infos = new ArrayList<>();
+        System.out.println("가나다라마바사");
+
         int i=0;
         int count = 1;
         while((result=br.readLine()) != null){
+
             if(i==0){
                 log.info("{}번째 차의 정보", count);
                 count+=1;
